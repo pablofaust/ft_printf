@@ -28,17 +28,17 @@ int				check_attributs(const char *format, int **i, t_maillon **maillon)
 	{
 		while (est_attribut(format[**i]))
 		{
-			if (format[i - 1] == format[i] || (format[i - 1] != '%' && !(est_attribut(format[i - 1]))))
+			if (format[**i - 1] == format[**i] || (format[**i - 1] != '%' && !(est_attribut(format[**i - 1]))))
 				return (0);
-			if (format[i] == '#')
+			if (format[**i] == '#')
 				(*maillon)->att_hash = 1;
-			if (format[i] == '0')
+			if (format[**i] == '0')
 				(*maillon)->att_zero = 1;
-			if (format[i] == '-')
+			if (format[**i] == '-')
 				(*maillon)->att_moins = 1;
-			if (format[i] == '+')
+			if (format[**i] == '+')
 				(*maillon)->att_plus = 1;
-			if (format[i] == ' ')
+			if (format[**i] == ' ')
 				(*maillon)->att_espace = 1;
 			(**i)++;
 		}

@@ -1,30 +1,33 @@
 #include "ft_printf.h"
 
-int				check_largeur(const char *format, int **i, t_maillon **maillon)
+int				check_erreurs(format, &i, &maillon)
 {
+	if (!(est_attribut(format, i)) && !(ft_isdigit(format[**i])) && !(est_modificateur(format, i)) && format[**i] != '.')
+		return (0);
+	else
+		return (1);
 }
-
-int				check_precision
-
-int				check_modificateur
 
 t_maillon		*parse_conversion(const char *format, int *i)
 {
 	t_maillon	*maillon;
-	
+
 	if (!(maillon = (t_maillon)malloc(sizeof(t_maillon) * 1)))
 		return (NULL);
 	maillon->ordinaires = 0;
 	while (format[(*i)++])
 	{
-		if (!(check_attributs(const char *format, &i, &maillon)))
+		if (!(check_attributs(format, &i, &maillon)))
 			return (NULL);
-		if (!(check_largeur(const char *format, &i, &maillon)))
+		if (!(check_largeur(format, &i, &maillon)))
 			return (NULL);
-		if (!(check_precision(const char *format, &i, &maillon)))
+		if (!(check_precision(format, &i, &maillon)))
 			return (NULL);
-		if (!(check_modificateur(const char *format, &i, &maillon)))
+		if (!(check_modificateur(format, &i, &maillon)))
 			return (NULL);
+		if (!(check_erreurs(format, &i, &maillon)))
+			return (NULL);
+	}
 }
 
 int				parsing(const char *format, t_maillon **maillons)

@@ -11,12 +11,21 @@ typedef struct			s_maillon
 	int					att_moins;
 	int					att_plus;
 	int					att_espace;
-	int					largeur;
-	int					precision;
+	char				*largeur;
+	char				*precision;
 	char				*modificateur;
 	void				(*conversion)();
 	char				*chaine;
 	t_maillon			*suivant;
 }						t_maillon;
+
+int				check_attributs(const char *format, int **i, t_maillon **maillon);
+int				check_precision(const char *format, int **i, t_maillon **maillon);
+int				check_largeur(const char *format, int **i, t_maillon **maillon);
+int				check_modificateur(const char *format, int **i);
+int				est_attribut(char a);
+int				est_modificateur(const char *format, int **i);
+t_maillon		*parse_ordinaires(const char *format, int *i);
+t_maillon		*ajouter_maillon(t_maillon **maillons, t_maillon *maillon);
 
 #endif

@@ -1,4 +1,4 @@
-#include "ft_printf.c"
+#include "ft_printf.h"
 
 int				est_modificateur(const char *format, int **i)
 {
@@ -25,7 +25,7 @@ int				est_modificateur(const char *format, int **i)
 		return (0);
 }
 
-int				check_modificateur(const char *format, int **i)
+int				check_modificateur(const char *format, int **i, t_maillon **maillon)
 {
 	int		nb;
 
@@ -36,15 +36,16 @@ int				check_modificateur(const char *format, int **i)
 		if (format[**i - 1] != '%' && !(ft_isdigit(format[**i - 1]) && format[**i - 1] != '.'))
 			return (0);
 		if (nb == 1)
-			(*maillon)->modificateur = format[**i];
+			(*maillon)->modificateur[0] = (char)format[**i];
 		else
 		{
-			if (!(*maillon)->modificateur = (char)malloc(sizeof(char) * 3))
+			if (!((*maillon)->modificateur = malloc(sizeof(char) * 3)))
 				return (0);
-			(*maillon)->modificateuri[0] = format[**i];
+			(*maillon)->modificateur[0] = format[**i];
 			(**i)++;
 			(*maillon)->modificateur[1] = format[**i];
 			(*maillon)->modificateur[2] = '\0';
 		}
-		return (1);
+	}
+	return (1);
 }

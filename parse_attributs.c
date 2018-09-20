@@ -11,15 +11,15 @@ int				est_attribut(char a)
 static void		complete_att(t_maillon **maillon)
 {
 	if ((*maillon)->att_hash != 1)
-		(*maillon)->att_hash == NULL;
+		(*maillon)->att_hash = 0;
 	if ((*maillon)->att_zero != 1)
-		(*maillon)->att_zero == NULL;
+		(*maillon)->att_zero = 0;
 	if ((*maillon)->att_moins != 1)
-		(*maillon)->att_moins == NULL;
+		(*maillon)->att_moins = 0;
 	if ((*maillon)->att_plus != 1)
-		(*maillon)->att_plus == NULL;
+		(*maillon)->att_plus = 0;
 	if ((*maillon)->att_espace != 1)
-		(*maillon)->att_espace == NULL;
+		(*maillon)->att_espace = 0;
 }
 
 int				check_attributs(const char *format, int **i, t_maillon **maillon)

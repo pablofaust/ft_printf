@@ -1,4 +1,4 @@
-#include "ft_printf.c"
+#include "ft_printf.h"
 
 static int		nb_chiffres(const char *format, int **i)
 {
@@ -10,7 +10,7 @@ static int		nb_chiffres(const char *format, int **i)
 	while (format[j] && ft_isdigit(format[j]))
 	{
 		j++;
-		longueur++:
+		longueur++;
 	}
 	return (longueur);
 }
@@ -25,7 +25,7 @@ int				check_largeur(const char *format, int **i, t_maillon **maillon)
 		if (format[**i - 1] != '%' || !(est_attribut(format[**i - 1])))
 			return (0);
 	}
-	if (!((*maillon)->largeur = (char)malloc(sizeof(char) * nb_chiffres(format, i) + 1)))
+	if (!((*maillon)->largeur = malloc(sizeof(char) * nb_chiffres(format, i) + 1)))
 		return (0);
 	j = 0;
 	while (ft_isdigit(format[**i]))
@@ -48,11 +48,11 @@ int				check_precision(const char *format, int **i, t_maillon **maillon)
 			return (0);
 		if (!(ft_isdigit(format[**i + 1]) || format[**i + 1] == '-'))
 		{
-			(*maillon->precision) = NULL;
+			(*maillon)->precision = NULL;
 			return (1);
 		}
 	}
-	if (!((*maillon)->precision = (char)malloc(sizeof(char) * nb_chiffres(format, i) + 1)))
+	if (!((*maillon)->precision = malloc(sizeof(char) * nb_chiffres(format, i) + 1)))
 		return (0);
 	j = 0;
 	while (ft_isdigit(format[**i]))

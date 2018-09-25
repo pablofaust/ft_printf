@@ -2,6 +2,6 @@
 
 int			main()
 {
-	ft_printf("weeeesh\n");	
+	ft_printf("nombre = %d");	
 	return (0);
 }

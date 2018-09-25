@@ -18,7 +18,8 @@ typedef struct			s_maillon
 	char				*largeur;
 	char				*precision;
 	char				*modificateur;
-	void				(*conversion)();
+	char				conversion;
+	void				(*fonction)();
 	char				*chaine;
 	t_maillon			*suivant;
 }						t_maillon;
@@ -32,7 +33,18 @@ int				check_largeur(const char *format, int **i, t_maillon **maillon);
 int				check_modificateur(const char *format, int **i, t_maillon **maillon);
 int				est_attribut(char a);
 int				est_modificateur(const char *format, int **i);
+char			est_conversion(const char *format, int **i);
 t_maillon		*parse_ordinaires(const char *format, int *i);
 t_maillon		**ajouter_maillon(t_maillon **maillons, t_maillon *maillon);
+void			conversion_s(const char *stri, t_maillon **maillon);
+void			conversion_S(const char *str, t_maillon **maillon);
+void			conversion_p(void *ptr, t_maillon **maillon);
+void			conversion_d_i(int nb, t_maillon **maillon);
+void			conversion_o(unsigned int nb, t_maillon **maillon);
+void			conversion_u(unsigned int nb, t_maillon **maillon);
+void			conversion_x(unsigned int nb, t_maillon **maillon);
+void			conversion_X(unsigned int nb, t_maillon **maillon);
+void			conversion_c(int c, t_maillon **maillon);
+void			conversion_C(int C, t_maillon **maillon);
 
 #endif

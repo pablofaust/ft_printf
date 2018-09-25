@@ -45,7 +45,7 @@ static t_maillon	*remplir_ordinaire(char *chaine)
 	maillon->largeur = NULL;
 	maillon->precision = NULL;
 	maillon->modificateur = NULL;
-	maillon->conversion = NULL;
+	maillon->conversion = '0';
 	maillon->chaine = chaine;
 	maillon->suivant = NULL;
 	return (maillon);
@@ -61,8 +61,10 @@ t_maillon			*parse_ordinaires(const char *format, int *i)
 	while (format[*i])
 	{
 		if (format[*i] == '%' && format[*i + 1] != '%')
-			exit (1);
-		// pas bien sur de la valeur de retour d'exit
+		{
+			(*i)--;
+			return (remplir_ordinaire(chaine));
+		}
 		else if (format[*i] == '%' && format[*i + 1] == '%')
 		{
 			if (!(chaine = ajout_chaine(chaine, j, '%')))

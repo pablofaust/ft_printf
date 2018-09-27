@@ -1,10 +1,12 @@
 #include "ft_printf.h"
 
-static int			nb_maillons(t_maillon **maillons)
+int					nb_maillons(t_maillon **maillons)
 {
 	t_maillon		**pointeur;
 	int				nb;
 
+	if (maillons == NULL)
+		return (0);
 	pointeur = maillons;
 	nb = 0;
 	while (*pointeur)
@@ -15,7 +17,7 @@ static int			nb_maillons(t_maillon **maillons)
 	return (nb);
 }
 
-static void			free_maillons(t_maillon **maillons)
+/*static void			free_maillons(t_maillon **maillons)
 {
 	t_maillon		*pointeur;
 
@@ -27,7 +29,7 @@ static void			free_maillons(t_maillon **maillons)
 		pointeur = *maillons;
 	}
 	*maillons = NULL;
-}
+}*/
 
 t_maillon			*creer_maillon(t_maillon *maillon)
 {
@@ -43,32 +45,23 @@ t_maillon			*creer_maillon(t_maillon *maillon)
 	maillon->conversion = '0';
 	maillon->fonction = NULL;
 	maillon->chaine = NULL;
+	maillon->suivant = NULL;
 	return (maillon);
 }
 
-t_maillon			**ajouter_maillon(t_maillon **maillons, t_maillon *maillon)
+void			ajouter_maillon(t_maillon **maillons, t_maillon *maillon)
 {
 	t_maillon		**pointeur;
-	t_maillon		**nouveaux;
 
-	nouveaux = NULL;
+	pointeur = NULL;
 	if (*maillons == NULL)
-	{
-		if (!(maillons = malloc(sizeof(t_maillon) * 1)))
-			return (0);
 		*maillons = maillon;
-		return (maillons);
-	}
 	else
 	{
-		if (!(nouveaux = malloc(sizeof(t_maillon*) * (nb_maillons(maillons) + 1 ))))
-			return (NULL);
-		nouveaux = maillons;
-		free_maillons(maillons);
-		pointeur = nouveaux;
-		while (*pointeur)
+		printf("Jusqu'ici tout va bien\n");	
+		pointeur = maillons;
+		while ((*pointeur)->suivant)
 			(*pointeur) = (*pointeur)->suivant;
 		(*pointeur)->suivant = maillon;
 	}
-	return (nouveaux);
 }

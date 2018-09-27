@@ -30,7 +30,7 @@ int		ft_printf(const char *format, ...)
 	t_maillon		*maillons;
 
 	maillons = NULL;
-	if (!(maillons = parsing(format, &maillons)))
+	if (!(parsing(format, &maillons)))
 		return (-1);
 	lire_maillons(&maillons);
 	return (1);

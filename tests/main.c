@@ -2,6 +2,7 @@
 
 int			main()
 {
-	ft_printf("%d");	
+	// TEST ESPACE //
+	ft_printf(" ");	
 	return (0);
 }

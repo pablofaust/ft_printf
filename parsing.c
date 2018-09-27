@@ -63,29 +63,30 @@ static int		parse_conversion(const char *format, int *i, t_maillon **maillon)
 	return (1);
 }
 
-t_maillon			*parsing(const char *format, t_maillon **maillons)
+int					parsing(const char *format, t_maillon **maillons)
 {
 	t_maillon		*maillon;
 	int				i;
+	int				lon;
 
 	i = 0;
-	while (i < (int)ft_strlen(format))
+	lon = ft_strlen(format);
+	while (i < lon)
 	{
 		if (!(maillon = creer_maillon(maillon)))
 			return (0);
 		if (format[i] == '%' && format[i + 1] && format[i + 1] != '%')
 		{
 			if (!(parse_conversion(format, &i, &maillon)))
-				return (NULL);
+				return (0);
 		}
 		else
 		{
 			if (!(parse_ordinaires(format, &i, &maillon)))
-				return (NULL);
+				return (0);
 		}
-		if (!(ajouter_maillon(maillons, maillon)))
-			return (NULL);
+		ajouter_maillon(maillons, maillon);
 		i++;
 	}
-	return (*maillons);
+	return (1);
 }

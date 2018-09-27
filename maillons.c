@@ -29,6 +29,25 @@ static void			free_maillons(t_maillon **maillons)
 	*maillons = NULL;
 }
 
+t_maillon			*creer_maillon(t_maillon *maillon)
+{
+	t_maillon		*maillon;
+
+	maillon->ordinaires = 0;
+	maillon->att_hash = 0;
+	maillon->att_zero = 0;
+	maillon->att_moins = 0;
+	maillon->att_plus = 0;
+	maillon->att_espace = 0;
+	maillon->largeur = NULL;
+	maillon->precision = NULL;
+	maillon->modificateur NULL;
+	maillon->conversion = '0';
+	maillon->fonction = NULL;
+	maillon->chaine = NULL;
+	return (maillon);
+}
+
 t_maillon			**ajouter_maillon(t_maillon **maillons, t_maillon *maillon)
 {
 	t_maillon		**pointeur;

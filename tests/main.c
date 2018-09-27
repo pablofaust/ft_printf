@@ -2,6 +2,6 @@
 
 int			main()
 {
-	ft_printf("nombre = %d");	
+	printf("nombre = % d", 5);	
 	return (0);
 }

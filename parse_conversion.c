@@ -96,8 +96,8 @@ int				modificateur(const char *format, int **i, t_maillon **maillon)
 	while (est_modificateur(format[**i]))
 	{
 		(*maillon)->modificateur[k] = format[**i];
-		(**i++);
-		k++:
+		(**i)++;
+		k++;
 	}
 	(*maillon)->modificateur[k] = '\0';
 	return (1);

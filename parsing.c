@@ -20,36 +20,47 @@ int					est_conversion(char a)
 {
 	if (a == 's' || a == 'S' || a == 'p' || a == 'd' || a == 'D' \
 			|| a == 'i' || a == 'o' || a == 'O' || a == 'u' \
-			|| a == 'U' || a == 'x' || a == 'X' || a == 'c' |
+			|| a == 'U' || a == 'x' || a == 'X' || a == 'c' \
 			|| a == 'C')
 		return (1);
 	else
 		return (0);
 }
 
-static t_maillon	*parse_conversion(const char *format, int *i)
+static int		parse_conversion(const char *format, int *i, t_maillon **maillon)
 {
-	t_maillon	*maillon;
-
-	if (!(maillon = creer_maillon(&maillon)))
-		return (NULL);
 	while (format[*i])
 	{
-		if (est_attribut(format[*i])
-			attributs(format, &i, &maillon);
-		else if (ft_isdigit(format[*i])
-			largeur(format, &i, &maillon);
+		if (est_attribut(format[*i]))
+		{
+			if (!(attributs(format, &i, maillon)))
+				return (0);
+		}
+		else if (ft_isdigit(format[*i]))
+		{
+			if (!(largeur(format, &i, maillon)))
+				return (0);
+		}
 		else if (format[*i] == '.')
-			precision(format, &i, &maillon);
+		{
+			if (!(precision(format, &i, maillon)))
+				return (0);
+		}
 		else if (est_modificateur(format[*i]))
-			modificateur(format, &i, &maillon);
+		{
+			if (!(modificateur(format, &i, maillon)))
+				return (0);
+		}
 		else if (est_conversion(format[*i]))
-			conversion(format, &i, &maillon);
+		{
+			if (!(conversion(format, &i, maillon)))
+				return (0);
+		}
 		else
 			break ;
 		(*i)++;
 	}
-	return (maillon);
+	return (1);
 }
 
 t_maillon			*parsing(const char *format, t_maillon **maillons)
@@ -60,7 +71,9 @@ t_maillon			*parsing(const char *format, t_maillon **maillons)
 	i = 0;
 	while (i < (int)ft_strlen(format))
 	{
-		if (format[i] == '%' && format[i + 1] != '%'i && != format[i - 1] != '%')
+		if (!(maillon = creer_maillon(maillon)))
+			return (0);
+		if (format[i] == '%' && format[i + 1] && format[i + 1] != '%')
 		{
 			if (!(parse_conversion(format, &i, &maillon)))
 				return (NULL);

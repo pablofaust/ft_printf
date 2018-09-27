@@ -29,29 +29,7 @@ static char			*ajout_chaine(char *chaine, int j, char a)
 	return (nouvelle);
 }
 
-static t_maillon	*remplir_ordinaire(char *chaine)
-{
-	t_maillon	*maillon;
-
-	if (!(maillon = malloc(sizeof(t_maillon) * 1)))
-		return (NULL);
-	maillon->ordinaires = 1;
-	maillon->indicateur = '0';
-	maillon->att_hash = 0;
-	maillon->att_zero = 0;
-	maillon->att_moins = 0;
-	maillon->att_plus = 0;
-	maillon->att_espace = 0;
-	maillon->largeur = NULL;
-	maillon->precision = NULL;
-	maillon->modificateur = NULL;
-	maillon->conversion = '0';
-	maillon->chaine = chaine;
-	maillon->suivant = NULL;
-	return (maillon);
-}
-
-t_maillon			*parse_ordinaires(const char *format, int *i)
+int				parse_ordinaires(const char *format, int *i, t_maillon **maillon)
 {
 	char		*chaine;
 	int			j;
@@ -60,25 +38,15 @@ t_maillon			*parse_ordinaires(const char *format, int *i)
 	j = 0;
 	while (format[*i])
 	{
-		if (format[*i] == '%' && format[*i + 1] != '%')
+		if (format[*i] == '%')
 		{
-			(*i)--;
-			return (remplir_ordinaire(chaine));
+			if (format[*i - 1] && format[*i - 1] != '%' && format[*i + 1] && format[*i + 1] != '%')
+				return (1);
 		}
-		else if (format[*i] == '%' && format[*i + 1] == '%')
-		{
-			if (!(chaine = ajout_chaine(chaine, j, '%')))
-				return (NULL);
-			*i += 2;
-			j++;
-		}
-		else
-		{
-			if (!(chaine = ajout_chaine(chaine, j, format[*i])))
-				return (NULL);
-			j++;
-			(*i)++;
-		}
+		if (!((*maillon)->chaine = ajout_chaine(chaine, j, format[*i])))
+			return (0);
+		j++;
+		(*i)++;
 	}
-	return (remplir_ordinaire(chaine));
+	return (1);
 }

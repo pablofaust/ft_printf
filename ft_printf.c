@@ -11,7 +11,6 @@ void	lire_maillons(t_maillon **maillons)
 	{
 		printf("--- MAILLON %d ---\n\n", i);
 		printf("ordinaires = %d\n", (*pointeur)->ordinaires);
-		printf("indicateur = %c\n", (*pointeur)->indicateur);
 		printf("# = %d\n", (*pointeur)->att_hash);
 		printf("0 = %d\n", (*pointeur)->att_zero);
 		printf("- = %d\n", (*pointeur)->att_moins);

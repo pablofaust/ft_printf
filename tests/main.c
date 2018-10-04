@@ -40,10 +40,39 @@ int			main()
 	ft_printf("%+c");
 	ft_printf("% c");
 	ft_printf("%#0-+ c");
+	// 
+	// test largeur //
+	//
+	ft_printf("%3c");
+	ft_printf("%31c");
+	ft_printf("%#31c");
+	ft_printf("%#0-+ 31c");
+	//
+	// test precision //
+	//
+	ft_printf("%.5c");
+	ft_printf("%.55c");
+	ft_printf("%31.55c");
+	ft_printf("%0.55c");
+	ft_printf("%#0-+ 31.55c");
+	//
+	// test modificateur //
+	//
+	ft_printf("%hhc");
+	ft_printf("%hc");
+	ft_printf("%lc");
+	ft_printf("%llc");
+	ft_printf("%jc");
+	ft_printf("%zc");
+	ft_printf("%#hc");
+	ft_printf("%31hc");
+	ft_printf("%.5hc");
+	ft_printf("%#0-+ 31.55hc");
+	//
 	// chaine + conversion //
 	//
-	ft_printf("nombre = %d");
-	ft_printf("nombre = %d, caractere = %c\n");
-	ft_printf("nombre = %#0d, caractere = %+- c\n");
+//	ft_printf("nombre = %d");
+//	ft_printf("nombre = %d, caractere = %c\n");
+//	ft_printf("nombre = %#0d, caractere = %+- c\n");
 	return (0);
 }

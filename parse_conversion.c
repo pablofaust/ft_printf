@@ -33,7 +33,10 @@ int					largeur(const char *format, int **i, t_maillon **maillon)
 			|| (*maillon)->modificateur != NULL || (*maillon)->conversion != '0')
 		return (0);
 	while (ft_isdigit(format[j]))
+	{
 		nb++;
+		j++;
+	}
 	if (!((*maillon)->largeur = malloc(sizeof(char) * nb + 1)))
 		return (0);
 	k = 0;
@@ -59,7 +62,10 @@ int				precision(const char *format, int **i, t_maillon **maillon)
 	nb = 0;
 	j = **i;
 	while (ft_isdigit(format[j]))
+	{
 		nb++;
+		j++;
+	}
 	if (!((*maillon)->precision = malloc(sizeof(char) * nb + 1)))
 		return (0);
 	k = 0;

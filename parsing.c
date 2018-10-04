@@ -29,6 +29,7 @@ int					est_conversion(char a)
 
 static int		parse_conversion(const char *format, int *i, t_maillon **maillon)
 {
+	(*i)++;
 	while (format[*i])
 	{
 		if (est_attribut(format[*i]))
@@ -73,7 +74,7 @@ int					parsing(const char *format, t_maillon **maillons)
 	lon = ft_strlen(format);
 	while (i < lon)
 	{
-		if (!(maillon = creer_maillon(maillon)))
+		if (!(maillon = creer_maillon()))
 			return (0);
 		if (format[i] == '%' && format[i + 1] && format[i + 1] != '%')
 		{

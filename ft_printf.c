@@ -5,7 +5,7 @@ void	lire_maillons(t_maillon **maillons)
 	t_maillon	**pointeur;
 	int			i;
 
-	i = 1;
+	i = 0;
 	pointeur = maillons;
 	while (*pointeur)
 	{
@@ -19,6 +19,7 @@ void	lire_maillons(t_maillon **maillons)
 		printf("largeur = %s\n", (*pointeur)->largeur);
 		printf("precision = %s\n", (*pointeur)->precision);
 		printf("modificateur = %s\n", (*pointeur)->modificateur);
+		printf("conversion = %c\n", (*pointeur)->conversion); 
 		printf("chaine = %s\n\n", (*pointeur)->chaine);
 		*pointeur = (*pointeur)->suivant;
 		i++;

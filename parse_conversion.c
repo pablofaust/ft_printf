@@ -108,6 +108,5 @@ int				conversion(const char *format, int **i, t_maillon **maillon)
 	if ((*maillon)->conversion != '0')
 		return (0);
 	(*maillon)->conversion = format[**i];
-	(**i)++;
-	return (0);
+	return (1);
 }

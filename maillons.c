@@ -31,8 +31,12 @@ int					nb_maillons(t_maillon **maillons)
 	*maillons = NULL;
 }*/
 
-t_maillon			*creer_maillon(t_maillon *maillon)
+t_maillon			*creer_maillon(void)
 {
+	t_maillon		*maillon;
+
+	if (!(maillon = malloc(sizeof(t_maillon))))
+		return (NULL);
 	maillon->ordinaires = 0;
 	maillon->att_hash = 0;
 	maillon->att_zero = 0;
@@ -58,7 +62,6 @@ void			ajouter_maillon(t_maillon **maillons, t_maillon *maillon)
 		*maillons = maillon;
 	else
 	{
-		printf("Jusqu'ici tout va bien\n");	
 		pointeur = maillons;
 		while ((*pointeur)->suivant)
 			(*pointeur) = (*pointeur)->suivant;

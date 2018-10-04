@@ -5,7 +5,7 @@ void	lire_maillons(t_maillon **maillons)
 	t_maillon	**pointeur;
 	int			i;
 
-	i = 0;
+	i = 1;
 	pointeur = maillons;
 	while (*pointeur)
 	{

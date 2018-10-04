@@ -55,16 +55,15 @@ t_maillon			*creer_maillon(void)
 
 void			ajouter_maillon(t_maillon **maillons, t_maillon *maillon)
 {
-	t_maillon		**pointeur;
+	t_maillon		*pointeur;
 
-	pointeur = NULL;
-	if (*maillons == NULL)
+	pointeur = *maillons;
+	if (pointeur == NULL)
 		*maillons = maillon;
 	else
 	{
-		pointeur = maillons;
-		while ((*pointeur)->suivant)
-			(*pointeur) = (*pointeur)->suivant;
-		(*pointeur)->suivant = maillon;
+		while (pointeur->suivant)
+			pointeur = pointeur->suivant;
+		pointeur->suivant = maillon;
 	}
 }

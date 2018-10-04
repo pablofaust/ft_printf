@@ -37,28 +37,31 @@ static int		parse_conversion(const char *format, int *i, t_maillon **maillon)
 			if (!(attributs(format, &i, maillon)))
 				return (0);
 		}
-		else if (ft_isdigit(format[*i]))
+		if (ft_isdigit(format[*i]))
 		{
 			if (!(largeur(format, &i, maillon)))
 				return (0);
 		}
-		else if (format[*i] == '.')
+		if (format[*i] == '.')
 		{
 			if (!(precision(format, &i, maillon)))
 				return (0);
 		}
-		else if (est_modificateur(format[*i]))
+		if (est_modificateur(format[*i]))
 		{
 			if (!(modificateur(format, &i, maillon)))
 				return (0);
 		}
-		else if (est_conversion(format[*i]))
+		if (est_conversion(format[*i]))
 		{
 			if (!(conversion(format, &i, maillon)))
 				return (0);
 		}
 		else
-			break ;
+		{
+			(*i)--;
+			return (1);
+		}
 		(*i)++;
 	}
 	return (1);

@@ -40,7 +40,10 @@ int				parse_ordinaires(const char *format, int *i, t_maillon **maillon)
 		if (format[*i] == '%')
 		{
 			if (format[*i - 1] && format[*i - 1] != '%' && format[*i + 1] && format[*i + 1] != '%')
+			{
+				(*i)--;
 				return (1);
+			}
 		}
 		if (!(ajout_chaine(maillon, j, format[*i])))
 			return (0);

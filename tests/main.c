@@ -31,10 +31,19 @@ int			main()
 	ft_printf("%x");	
 	ft_printf("%X");	
 	ft_printf("%c");	
-	ft_printf("%C");	
+	ft_printf("%C");
+	// test attributs //
 	//
-	// test chaine + conversion //
+	ft_printf("%#c");
+	ft_printf("%0c");
+	ft_printf("%-c");
+	ft_printf("%+c");
+	ft_printf("% c");
+	ft_printf("%#0-+ c");
+	// chaine + conversion //
 	//
-	//ft_printf("conversion = %d");
+	ft_printf("nombre = %d");
+	ft_printf("nombre = %d, caractere = %c\n");
+	ft_printf("nombre = %#0d, caractere = %+- c\n");
 	return (0);
 }

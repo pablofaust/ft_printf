@@ -114,5 +114,16 @@ int				conversion(const char *format, int **i, t_maillon **maillon)
 	if ((*maillon)->conversion != '0')
 		return (0);
 	(*maillon)->conversion = format[**i];
+	if ((*maillon)->conversion == 's' || (*maillon)->conversion == 'S')
+		(*maillon)->fonction = conversion_s;
+	if ((*maillon)->conversion == 'p')
+		(*maillon)->fonction = conversion_p;
+	if ((*maillon)->conversion == 'd' || (*maillon)->conversion == 'i' || (*maillon)->conversion == 'D')
+		(*maillon)->fonction = conversion_d_i;
+	if ((*maillon)->conversion == 'o' || (*maillon)->conversion == 'u' \
+		|| (*maillon)->conversion == 'x' || (*maillon)->conversion == 'X')
+		(*maillon)->fonction = conversion_o_u_x;
+	if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')
+		(*maillon)->fonction = conversion_c;
 	return (1);
 }

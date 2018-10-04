@@ -71,8 +71,8 @@ int			main()
 	//
 	// chaine + conversion //
 	//
-//	ft_printf("nombre = %d");
-//	ft_printf("nombre = %d, caractere = %c\n");
-//	ft_printf("nombre = %#0d, caractere = %+- c\n");
+	ft_printf("nombre = %d");
+	ft_printf("nombre = %d, caractere = %c\n");
+	ft_printf("nombre = %#034.54ld, caractere = %+- 23.54hhs\n");
 	return (0);
 }

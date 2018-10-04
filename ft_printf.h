@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct			s_maillon t_maillon;
 typedef struct			s_maillon
@@ -43,11 +44,7 @@ void			conversion_s(const char *stri, t_maillon **maillon);
 void			conversion_S(const char *str, t_maillon **maillon);
 void			conversion_p(void *ptr, t_maillon **maillon);
 void			conversion_d_i(int nb, t_maillon **maillon);
-void			conversion_o(unsigned int nb, t_maillon **maillon);
-void			conversion_u(unsigned int nb, t_maillon **maillon);
-void			conversion_x(unsigned int nb, t_maillon **maillon);
-void			conversion_X(unsigned int nb, t_maillon **maillon);
+void			conversion_o_u_x(unsigned int nb, t_maillon **maillon);
 void			conversion_c(int c, t_maillon **maillon);
-void			conversion_C(int C, t_maillon **maillon);
 
 #endif

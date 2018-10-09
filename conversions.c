@@ -3,45 +3,73 @@
 int		remplir_chaine(char *arg, t_maillon **maillon)
 {
 	int		i;
+	int		precision;
 
-	if (!(maillon->chaine = malloc(sizeof(char) * ft_strlen(arg) + 1)))
+	if (!((*maillon)->chaine = malloc(sizeof(char) * ft_strlen(arg) + 1)))
 		return (0);
 	i = 0;
-	while (arg[i])
+	if ((*maillon)->precision != NULL)
+		precision = ft_atoi((*maillon)->precision);
+	while (arg[i] && i <= precision)
 	{
-		maillon->chaine[i] = arg[i];
+		(*maillon)->chaine[i] = arg[i];
 		i++;
 	}
-	maillon->chaine = '\0';
+	if ((*maillon)->precision == NULL || ft_atoi((*maillon)->precision) > i)
+		(*maillon)->chaine[i] = '\0';
 	return (1);
 }
 
-void	conversion_s(va_list ap, t_maillon **maillon)
+int		conversion_s(va_list ap, t_maillon **maillon)
 {
-
-	if (maillon->conversion == 's')
+	if ((*maillon)->conversion == 's')
 	{
 		if (!(remplir_chaine((char*)va_arg(ap, const char*), maillon)))
 			return (0);
 	}
-	if (maillon->conversion == 'S' || maillon->modificateur[0] == 'l')
+	if ((*maillon)->conversion == 'S')
 	{
-		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))
-			return (0);
+		wchar_t		*sw;
+
+		sw = va_arg(ap, wchar_t *);
+		printf("%ls\n", sw);
+		//		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))
+		//			return (0);
 	}
+	return (1);
 }
 
-void	conversion_p_x_X(va_list ap, t_maillon **maillon)
+int		conversion_p_x(va_list ap, t_maillon **maillon)
 {
+	(void)ap;
+	(void)maillon;
+	return (1);
+}
 
-	if (maillon->conversion == 'p')
-	{
-		if (!(remplir_chaine((char*)va_arg(ap, const char*), maillon)))
-			return (0);
-	}
-	if (maillon->conversion == 'S' || maillon->modificateur[0] == 'l')
-	{
-		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))
-			return (0);
-	}
+int		conversion_d_i(va_list ap, t_maillon **maillon)
+{
+	(void)ap;
+	(void)maillon;
+	return (1);
+}
+
+int		conversion_o(va_list ap, t_maillon **maillon)
+{
+	(void)ap;
+	(void)maillon;
+	return (1);
+}
+
+int		conversion_u(va_list ap, t_maillon **maillon)
+{
+	(void)ap;
+	(void)maillon;
+	return (1);
+}
+
+int		conversion_c(va_list ap, t_maillon **maillon)
+{
+	(void)ap;
+	(void)maillon;
+	return (1);
 }

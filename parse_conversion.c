@@ -116,14 +116,15 @@ int				conversion(const char *format, int **i, t_maillon **maillon)
 	(*maillon)->conversion = format[**i];
 	if ((*maillon)->conversion == 's' || (*maillon)->conversion == 'S')
 		(*maillon)->fonction = conversion_s;
-	if ((*maillon)->conversion == 'p')
-		(*maillon)->fonction = conversion_p;
-	if ((*maillon)->conversion == 'd' || (*maillon)->conversion == 'i' || (*maillon)->conversion == 'D')
+	else if ((*maillon)->conversion == 'p' || (*maillon)->conversion == 'x' || (*maillon)->conversion == 'X')
+		(*maillon)->fonction = conversion_p_x;
+	else if ((*maillon)->conversion == 'd' || (*maillon)->conversion == 'D' ||  (*maillon)->conversion == 'i')
 		(*maillon)->fonction = conversion_d_i;
-	if ((*maillon)->conversion == 'o' || (*maillon)->conversion == 'u' \
-		|| (*maillon)->conversion == 'x' || (*maillon)->conversion == 'X')
-		(*maillon)->fonction = conversion_o_u_x;
-	if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')
+	else if ((*maillon)->conversion == 'o' || (*maillon)->conversion == 'O')
+		(*maillon)->fonction = conversion_o;
+	else if ((*maillon)->conversion == 'u' || (*maillon)->conversion == 'U')
+		(*maillon)->fonction = conversion_u;
+	else if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')
 		(*maillon)->fonction = conversion_c;
 	return (1);
 }

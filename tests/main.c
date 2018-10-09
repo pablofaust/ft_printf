@@ -77,7 +77,12 @@ int			main()
 //	
 	// test un argument //
 	//
-	ft_printf("%d\n", 5);
+	// test s //
+	//ft_printf("%s\n", "osidfosifj");
+	//
+	// test S //
+	//
+	ft_printf("%S\n", L"Җ");
 	//
 	return (0);
 }

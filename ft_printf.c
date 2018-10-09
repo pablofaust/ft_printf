@@ -29,10 +29,14 @@ void	lire_maillons(t_maillon **maillons)
 int		ft_printf(const char *format, ...)
 {
 	t_maillon		*maillons;
+	va_list			ap;
 
 	maillons = NULL;
 	if (!(parsing(format, &maillons)))
 		return (-1);
-	lire_maillons(&maillons);
+	va_start(ap, format);
+	if (!(traitement(ap, &maillons)))
+		return (-1);
+//	lire_maillons(&maillons);
 	return (1);
 }

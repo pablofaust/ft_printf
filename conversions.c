@@ -1,41 +1,47 @@
 #include "ft_printf.h"
 
-void	conversion_s(const char *str, t_maillon **maillon)
+int		remplir_chaine(char *arg, t_maillon **maillon)
 {
-	(*maillon)->chaine = (char*)str;	
+	int		i;
+
+	if (!(maillon->chaine = malloc(sizeof(char) * ft_strlen(arg) + 1)))
+		return (0);
+	i = 0;
+	while (arg[i])
+	{
+		maillon->chaine[i] = arg[i];
+		i++;
+	}
+	maillon->chaine = '\0';
+	return (1);
 }
 
-void	conversion_S(const char *str, t_maillon **maillon)
+void	conversion_s(va_list ap, t_maillon **maillon)
 {
-	(*maillon)->chaine = (char*)str;
+
+	if (maillon->conversion == 's')
+	{
+		if (!(remplir_chaine((char*)va_arg(ap, const char*), maillon)))
+			return (0);
+	}
+	if (maillon->conversion == 'S' || maillon->modificateur[0] == 'l')
+	{
+		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))
+			return (0);
+	}
 }
 
-void	conversion_p(void *ptr, t_maillon **maillon)
+void	conversion_p_x_X(va_list ap, t_maillon **maillon)
 {
-	(*maillon)->chaine = ptr;
-}
 
-void	conversion_d_i(int nb, t_maillon **maillon)
-{
-	if (nb)
-		(*maillon)->chaine = "a";
+	if (maillon->conversion == 'p')
+	{
+		if (!(remplir_chaine((char*)va_arg(ap, const char*), maillon)))
+			return (0);
+	}
+	if (maillon->conversion == 'S' || maillon->modificateur[0] == 'l')
+	{
+		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))
+			return (0);
+	}
 }
-
-void	conversion_o_u_x(unsigned int nb, t_maillon **maillon)
-{
-	if (nb)
-		(*maillon)->chaine = "a";
-}
-
-void	conversion_u(unsigned int nb, t_maillon **maillon)
-{
-	if (nb)
-		(*maillon)->chaine = "a";
-}
-
-void	conversion_c(int c, t_maillon **maillon)
-{
-	if (c)
-		(*maillon)->chaine = "a";
-}
-

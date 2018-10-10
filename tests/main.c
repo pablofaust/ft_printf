@@ -78,11 +78,17 @@ int			main()
 	// test un argument //
 	//
 	// test s //
-	//ft_printf("%s\n", "osidfosifj");
+	printf("%s\n", "osidfosifj");
+	ft_printf("%s\n", "osidfosifj");
+	printf("%-s\n", "osidfosifj");
+	ft_printf("%-s\n", "osidfosifj");
+	printf("%19s\n", "osidfosifj");
+	ft_printf("%19s\n", "osidfosifj");
 	//
 	// test S //
 	//
-	ft_printf("%S\n", L"Җ");
+//	printf("%ls\n", L"Җ" "ࡡ");
+//	ft_printf("%S\n", L"Җ");
 	//
 	return (0);
 }

@@ -2,20 +2,26 @@
 
 int		remplir_chaine(char *arg, t_maillon **maillon)
 {
+	int		totale;
+	int		portion;
 	int		i;
-	int		precision;
-
-	if (!((*maillon)->chaine = malloc(sizeof(char) * ft_strlen(arg) + 1)))
-		return (0);
-	i = 0;
+	int		j;
+	
+	totale = ft_strlen(arg);
+	portion = totale;
+	if ((*maillon)->largeur != NULL)
+		totale = ft_atoi((*maillon)->largeur);
 	if ((*maillon)->precision != NULL)
-		precision = ft_atoi((*maillon)->precision);
-	while (arg[i] && i <= precision)
-	{
-		(*maillon)->chaine[i] = arg[i];
-		i++;
-	}
-	if ((*maillon)->precision == NULL || ft_atoi((*maillon)->precision) > i)
+		portion = ft_atoi((*maillon)->precision) - 1;
+	if (!((*maillon)->chaine = ft_strnew(totale)))
+		return (0);
+	i = -1 ;
+	while (++i < totale - portion)
+		(*maillon)->chaine[i] = ' ';
+	j = 0;
+	while (i <= totale)
+		(*maillon)->chaine[i++] = arg[j++];
+	if ((*maillon)->precision == NULL)
 		(*maillon)->chaine[i] = '\0';
 	return (1);
 }
@@ -34,7 +40,7 @@ int		conversion_s(va_list ap, t_maillon **maillon)
 		sw = va_arg(ap, wchar_t *);
 		while (*sw)
 		{
-			printf("%s\n", ft_itoa_base_ll(114, 2));
+			printf("%s\n", ft_itoa_base_ll(*sw, 2));
 			sw++;
 		}
 		//		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))

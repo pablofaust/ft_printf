@@ -1,5 +1,17 @@
 #include "ft_printf.h"
 
+void	lecture(t_maillon **maillons)
+{
+	t_maillon	*pointeur;
+
+	pointeur = *maillons;
+	while (pointeur)
+	{
+		ft_putstr(pointeur->chaine);
+		pointeur = pointeur->suivant;
+	}
+}
+
 void	lire_maillons(t_maillon **maillons)
 {
 	t_maillon	**pointeur;
@@ -37,6 +49,7 @@ int		ft_printf(const char *format, ...)
 	va_start(ap, format);
 	if (!(traitement(ap, &maillons)))
 		return (-1);
+	lecture(&maillons);
 //	lire_maillons(&maillons);
 	return (1);
 }

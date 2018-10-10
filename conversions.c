@@ -32,7 +32,11 @@ int		conversion_s(va_list ap, t_maillon **maillon)
 		wchar_t		*sw;
 
 		sw = va_arg(ap, wchar_t *);
-		printf("%ls\n", sw);
+		while (*sw)
+		{
+			printf("%s\n", ft_itoa_base_ll(114, 2));
+			sw++;
+		}
 		//		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))
 		//			return (0);
 	}

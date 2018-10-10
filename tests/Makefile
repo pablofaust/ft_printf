@@ -8,7 +8,7 @@ all:  $(NAME)
 
 $(NAME):
 		make -C ../ re
-			gcc -Wall -Wextra -Werror -c $(SOURCE) -I ../ft_printf.h
+			gcc -Wall -Wextra -c $(SOURCE) -I ../ft_printf.h
 				gcc -o $(NAME) $(OBJ) ../libftprintf.a
 
 clean:

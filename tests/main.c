@@ -78,17 +78,26 @@ int			main()
 	// test un argument //
 	//
 	// test s //
-	printf("%s\n", "osidfosifj");
-	ft_printf("%s\n", "osidfosifj");
-	printf("%-s\n", "osidfosifj");
-	ft_printf("%-s\n", "osidfosifj");
-	printf("%19s\n", "osidfosifj");
-	ft_printf("%19s\n", "osidfosifj");
+	//printf("%s\n", "osidfosifj");
+	//ft_printf("%s\n", "osidfosifj");
+	//printf("%-s\n", "osidfosifj");
+	//ft_printf("%-s\n", "osidfosifj");
+	//printf("%19s\n", "osidfosifj");
+	//ft_printf("%19s\n", "osidfosifj");
+	//printf("%.5s\n", "osidfosifj");
+	//ft_printf("%.5s\n", "osidfosifj");
+	//printf("%19.5s\n", "osidfosifj");
+	//ft_printf("%19.5s\n", "osidfosifj");
+	// peut-etre qu'il faut gerer les cas d'erreur pour ls
 	//
-	// test S //
+	// test p //
 	//
-//	printf("%ls\n", L"Җ" "ࡡ");
-//	ft_printf("%S\n", L"Җ");
-	//
+	int	n;
+	int	*ptr;
+
+	n = 12;
+	ptr = &n;
+	printf("%p\n", ptr);
+	ft_printf("%p\n", ptr);
 	return (0);
 }

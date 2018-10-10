@@ -12,14 +12,14 @@ int		remplir_chaine(char *arg, t_maillon **maillon)
 	if ((*maillon)->largeur != NULL)
 		totale = ft_atoi((*maillon)->largeur);
 	if ((*maillon)->precision != NULL)
-		portion = ft_atoi((*maillon)->precision) - 1;
+		portion = ft_atoi((*maillon)->precision);
 	if (!((*maillon)->chaine = ft_strnew(totale)))
 		return (0);
-	i = -1 ;
-	while (++i < totale - portion)
-		(*maillon)->chaine[i] = ' ';
+	i = 0 ;
+	while ((*maillon)->largeur != NULL && i < totale - portion)
+		(*maillon)->chaine[i++] = ' ';
 	j = 0;
-	while (i <= totale)
+	while (i <= totale && portion--)
 		(*maillon)->chaine[i++] = arg[j++];
 	if ((*maillon)->precision == NULL)
 		(*maillon)->chaine[i] = '\0';
@@ -43,8 +43,6 @@ int		conversion_s(va_list ap, t_maillon **maillon)
 			printf("%s\n", ft_itoa_base_ll(*sw, 2));
 			sw++;
 		}
-		//		if (!(remplir_chaine((char*)va_arg(ap, const wchar_t*), maillon)))
-		//			return (0);
 	}
 	return (1);
 }
@@ -53,6 +51,10 @@ int		conversion_p_x(va_list ap, t_maillon **maillon)
 {
 	(void)ap;
 	(void)maillon;
+	void	*ptr;
+
+	ptr = va_arg(ap, void*);
+	ft_putnbr(ptr);
 	return (1);
 }
 

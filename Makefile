@@ -25,7 +25,7 @@ OBJ 		= $(SOURCE:.c=.o)
 all: 		$(NAME)
 
 $(NAME):
-			gcc -g -Wall -Wextra -Werror -c $(SOURCE) libft/*.c -I ft_printf.h
+			gcc -g -Wall -Wextra -c $(SOURCE) libft/*.c -I ft_printf.h
 			ar rc $(NAME) $(OBJ) *.o
 			ranlib $(NAME)
 

@@ -92,12 +92,9 @@ int			main()
 	//
 	// test p //
 	//
-	int	n;
-	int	*ptr;
+	int		a;
 
-	n = 12;
-	ptr = &n;
-	printf("%p\n", ptr);
-	ft_printf("%p\n", ptr);
+	printf("%p\n", &a);
+	ft_printf("%p\n", &a);
 	return (0);
 }

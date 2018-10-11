@@ -49,12 +49,16 @@ int		conversion_s(va_list ap, t_maillon **maillon)
 
 int		conversion_p_x(va_list ap, t_maillon **maillon)
 {
-	(void)ap;
-	(void)maillon;
-	void	*ptr;
+	long long	arg;
+	char		*itoa;
 
-	ptr = va_arg(ap, void*);
-	ft_putnbr(ptr);
+	arg = (long long)va_arg(ap, void*);
+	if (!(itoa = ft_itoa_base_ll(arg, 16)))
+		return (0);
+	if (!((*maillon)->chaine = ft_strnew(ft_strlen(itoa) + 2)))
+		return (0);
+	if (!((*maillon)->chaine = ft_strjoin("0x", itoa)))
+		return (0);
 	return (1);
 }
 

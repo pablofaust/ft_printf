@@ -6,7 +6,7 @@
 #    By: pfaust <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 11:10:04 by pfaust            #+#    #+#              #
-#    Updated: 2018/10/09 15:28:55 by pfaust           ###   ########.fr        #
+#    Updated: 2018/10/11 11:56:39 by pfaust           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ 		= $(SOURCE:.c=.o)
 all: 		$(NAME)
 
 $(NAME):
-			gcc -g -Wall -Wextra -c $(SOURCE) libft/*.c -I ft_printf.h
+			gcc -g -Wall -Wextra -Werror -c $(SOURCE) libft/*.c -I ft_printf.h
 			ar rc $(NAME) $(OBJ) *.o
 			ranlib $(NAME)
 

@@ -23,6 +23,7 @@ typedef struct			s_maillon
 	char				conversion;
 	int					(*fonction)(va_list ap, t_maillon **maillon);
 	char				*chaine;
+	int					neg;
 	t_maillon			*suivant;
 }						t_maillon;
 

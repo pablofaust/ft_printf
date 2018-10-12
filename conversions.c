@@ -62,10 +62,50 @@ int		conversion_p_x(va_list ap, t_maillon **maillon)
 	return (1);
 }
 
+char		*aj_precision(char *nb, int precision)
+{
+	char	*res;
+	int		i;
+	int		zeros;
+	int		neg;
+	int		j;
+
+	neg = (nb[0] == '-') ? 1 : 0;
+	zeros = precision - ft_strlen(nb);
+	if (!(res = ft_strnew(precision)))
+		return (NULL);
+	i = 0;
+	if (neg)
+	{
+		res[0] = '-';
+		zeros++;
+		i++;
+	}
+	while (i < zeros)
+		res[i++] = '0';
+	j = 1;
+	while (i <= precision)
+		res[i++] = nb[j++];
+	return (res);
+}
+
 int		conversion_d_i(va_list ap, t_maillon **maillon)
 {
-	(void)ap;
-	(void)maillon;
+	char	*nb;
+	int		precision;
+
+	if (!(nb = ft_itoa(va_arg(ap, int))))
+		return (0);
+	precision = ((*maillon)->precision) != NULL ? ft_atoi((*maillon)->precision) : 0;
+	if (nb[0i] == '-')
+		(*maillon)->neg = 1;
+	if (precision != 0)
+	{
+		if (!(nb = aj_precision(nb, precision)))
+			return (0);
+	}
+	if (!(remplir_chaine(nb, maillon)))
+		return (0);
 	return (1);
 }
 

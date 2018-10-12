@@ -96,5 +96,30 @@ int			main()
 
 	printf("%p\n", &a);
 	ft_printf("%p\n", &a);
+	printf("%-p\n", &a);
+	ft_printf("%-p\n", &a);
+	printf("%12p\n", &a);
+	ft_printf("%12p\n", &a);
+	printf("%-12p\n", &a);
+	ft_printf("%-12p\n", &a);
+	//
+	// test d //
+	//
+	printf ("%d\n", 12);
+	ft_printf ("%d\n", 12);
+	printf ("%d\n", -12);
+	ft_printf ("%d\n", -12);
+	printf ("%0d\n", -12);
+	ft_printf ("%0d\n", -12);
+	printf ("%-d\n", -12);
+	ft_printf ("%-d\n", -12);
+	printf ("%+d\n", -12);
+	ft_printf ("%+d\n", -12);
+	printf ("% d\n", -12);
+	ft_printf ("% d\n", -12);
+	printf ("%12d\n", -12);
+	ft_printf ("%12d\n", -12);
+	printf ("%.5d\n", -12);
+	ft_printf ("%.5d\n", -12);
 	return (0);
 }

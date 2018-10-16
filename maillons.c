@@ -49,7 +49,8 @@ t_maillon			*creer_maillon(void)
 	maillon->conversion = '0';
 	maillon->fonction = NULL;
 	maillon->chaine = NULL;
-	maillon->chaine = 0;
+	maillon->neg = 0;
+	maillon->lon = 0;
 	maillon->suivant = NULL;
 	return (maillon);
 }

@@ -62,49 +62,32 @@ int		conversion_p_x(va_list ap, t_maillon **maillon)
 	return (1);
 }
 
-char		*aj_precision(char *nb, int precision)
+int		remplir_nb(t_maillon **maillon, char *itoa, int precision, int neg)
 {
-	char	*res;
-	int		i;
+	int		taille;
 	int		zeros;
-	int		neg;
-	int		j;
+	
+	zeros = ft_never_negative(precision - (*maillon)->lon + neg);
+	taille = (precision != 0) ? precision + neg : (*maillon)->lon;
+	if (!((*maillon)->chaine = ft_strnew(taille)))
+		return (0);
+	(void)itoa;
+	return (1);
 
-	neg = (nb[0] == '-') ? 1 : 0;
-	zeros = precision - ft_strlen(nb);
-	if (!(res = ft_strnew(precision)))
-		return (NULL);
-	i = 0;
-	if (neg)
-	{
-		res[0] = '-';
-		zeros++;
-		i++;
-	}
-	while (i < zeros)
-		res[i++] = '0';
-	j = 1;
-	while (i <= precision)
-		res[i++] = nb[j++];
-	return (res);
 }
 
 int		conversion_d_i(va_list ap, t_maillon **maillon)
 {
-	char	*nb;
+	char	*itoa;
 	int		precision;
 
-	if (!(nb = ft_itoa(va_arg(ap, int))))
+	if (!(itoa = ft_itoa(va_arg(ap, int))))
 		return (0);
-	precision = ((*maillon)->precision) != NULL ? ft_atoi((*maillon)->precision) : 0;
-	if (nb[0i] == '-')
+	precision = ((*maillon)->precision != NULL) ? ft_atoi((*maillon)->precision) : 0;
+	if (itoa[0] == '-')
 		(*maillon)->neg = 1;
-	if (precision != 0)
-	{
-		if (!(nb = aj_precision(nb, precision)))
-			return (0);
-	}
-	if (!(remplir_chaine(nb, maillon)))
+	(*maillon)->lon = ft_strlen(itoa);
+	if (!(remplir_nb(maillon, itoa, precision, (*maillon)->neg)))
 		return (0);
 	return (1);
 }

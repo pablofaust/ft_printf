@@ -24,6 +24,7 @@ typedef struct			s_maillon
 	int					(*fonction)(va_list ap, t_maillon **maillon);
 	char				*chaine;
 	int					neg;
+	int					lon;
 	t_maillon			*suivant;
 }						t_maillon;
 

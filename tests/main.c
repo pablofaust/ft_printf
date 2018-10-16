@@ -121,5 +121,7 @@ int			main()
 	ft_printf ("%12d\n", -12);
 	printf ("%.5d\n", -12);
 	ft_printf ("%.5d\n", -12);
+	printf ("%12.5d\n", -12);
+	ft_printf ("%12.5d\n", -12);
 	return (0);
 }

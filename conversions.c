@@ -66,14 +66,30 @@ int		remplir_nb(t_maillon **maillon, char *itoa, int precision, int neg)
 {
 	int		taille;
 	int		zeros;
-	
+	int		i;
+//	int		j;
+	int		largeur;
+
+	largeur = 0;
+	if ((*maillon)->largeur != NULL)
+	{
+		if (!(largeur = ft_atoi((*maillon)->largeur)))
+			return (0);
+	}
 	zeros = ft_never_negative(precision - (*maillon)->lon + neg);
-	taille = (precision != 0) ? precision + neg : (*maillon)->lon;
+	taille = (precision != 0) ? precision + neg + largeur : (*maillon)->lon + largeur;
+//	printf("longueur nb = %d, precision = %d, largeur = %d, zeros = %d, taille = %d\n", (*maillon)->lon, precision, largeur, zeros, taille);
 	if (!((*maillon)->chaine = ft_strnew(taille)))
 		return (0);
+	i= 0;
+	while (largeur - precision && i < largeur - precision)
+		(*maillon)->chaine[i++] = ' ';
+	if (neg)
+		(*maillon)->chaine[i++] = '-';
+	while (zeros && i <= zeros)
+		(*maillon)->chaine[i++] = '0';
 	(void)itoa;
 	return (1);
-
 }
 
 int		conversion_d_i(va_list ap, t_maillon **maillon)

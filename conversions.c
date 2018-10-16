@@ -6,7 +6,7 @@ int		remplir_chaine(char *arg, t_maillon **maillon)
 	int		portion;
 	int		i;
 	int		j;
-	
+
 	totale = ft_strlen(arg);
 	portion = totale;
 	if ((*maillon)->largeur != NULL)
@@ -62,6 +62,40 @@ int		conversion_p_x(va_list ap, t_maillon **maillon)
 	return (1);
 }
 
+int		remplir_nb_moins(t_maillon **maillon, char *itoa, int precision, int neg)
+{
+	int		taille;
+	int		zeros;
+	int		i;
+	int		largeur;
+	int		j;
+
+	largeur = 0;
+	zeros = ft_never_negative(precision - (*maillon)->lon + neg);
+	if ((*maillon)->largeur != NULL)
+	{
+		if (!(largeur = ft_atoi((*maillon)->largeur) - ((*maillon)->lon + zeros)))
+			return (0);
+	}
+	taille = (precision != 0) ? precision + neg + largeur : (*maillon)->lon + largeur;
+	if (!((*maillon)->chaine = ft_strnew(taille)))
+		return (0);
+	i= 0;
+	j = 0;
+	if (neg)
+	{
+		(*maillon)->chaine[i++] = '-';
+		j++;
+	}
+	while (zeros && i <= zeros)
+		(*maillon)->chaine[i++] = '0';
+	while (itoa[j])
+		(*maillon)->chaine[i++] = itoa[j++];
+	while (largeur && i < largeur + zeros + j)
+		(*maillon)->chaine[i++] = ' ';
+	return (1);
+}
+
 int		remplir_nb(t_maillon **maillon, char *itoa, int precision, int neg)
 {
 	int		taille;
@@ -71,7 +105,6 @@ int		remplir_nb(t_maillon **maillon, char *itoa, int precision, int neg)
 	int		j;
 
 	largeur = 0;
-
 	zeros = ft_never_negative(precision - (*maillon)->lon + neg);
 	if ((*maillon)->largeur != NULL)
 	{
@@ -108,8 +141,14 @@ int		conversion_d_i(va_list ap, t_maillon **maillon)
 	if (itoa[0] == '-')
 		(*maillon)->neg = 1;
 	(*maillon)->lon = ft_strlen(itoa);
-	if (!(remplir_nb(maillon, itoa, precision, (*maillon)->neg)))
-		return (0);
+	if ((*maillon)->att_moins)
+	{
+		if (!(remplir_nb_moins(maillon, itoa, precision, (*maillon)->neg)))
+			return (0);
+	}
+	else
+		if (!(remplir_nb(maillon, itoa, precision, (*maillon)->neg)))
+			return (0);
 	return (1);
 }
 

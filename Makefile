@@ -6,7 +6,7 @@
 #    By: pfaust <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 11:10:04 by pfaust            #+#    #+#              #
-#    Updated: 2018/10/16 12:23:34 by pfaust           ###   ########.fr        #
+#    Updated: 2018/10/17 10:12:07 by pfaust           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SOURCE 		= ft_printf.c \
 			  parsing.c \
 			  traitement.c \
 			  conversions.c \
+			  conversion_int.c \
+			  modif_att.c \
+			  modif_precision.c
 
 OBJ 		= $(SOURCE:.c=.o)
 

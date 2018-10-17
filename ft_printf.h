@@ -51,4 +51,7 @@ int				conversion_d_i(va_list ap, t_maillon **maillon);
 int				conversion_o(va_list ap, t_maillon **maillon);
 int				conversion_u(va_list ap, t_maillon **maillon);
 int				conversion_c(va_list ap, t_maillon **maillon);
+int				conversion_int(va_list ap, t_maillon **maillon);
+char			*modif_plus(t_maillon **maillon, char c);
+char			*modif_precision(t_maillon **maillon);
 #endif

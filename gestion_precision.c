@@ -45,12 +45,34 @@ char		*precision_int(t_maillon **maillon)
 		return (chaine);
 }
 
-char		*modif_precision(t_maillon **maillon)
+char		*precision_char(t_maillon **maillon, int precision, int initial)
+{
+	char	*chaine;
+	char	*nouvelle;
+	int		i;
+
+	chaine = (*maillon)->chaine;
+	if (precision < initial) 
+	{
+		if (!(nouvelle = ft_strnew(precision)))
+			return (chaine);
+		i = -1;
+		while (chaine[++i] && i < precision)
+			nouvelle[i] = chaine[i];
+		return (nouvelle);
+	}
+	else
+		return (chaine);
+}
+
+char		*modif_precision(t_maillon **maillon, int precision, int initial)
 {
 	char	c;
 
 	c = (*maillon)->conversion;
 	if (c == 'd' || c == 'i')
 		return (precision_int(maillon));
+	else if (c == 's')
+		return (precision_char(maillon, precision, initial));
 	return ((*maillon)->chaine);
 }

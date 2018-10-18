@@ -2,16 +2,21 @@
 
 int			ecrit_int(t_maillon **maillon)
 {
+	int		largeur;
+	int		initial;
+	int		precision;
+
+	largeur = ((*maillon)->largeur) ? ft_atoi((*maillon)->largeur) : 0;
+	initial = ft_strlen((*maillon)->chaine);
+	precision = ((*maillon)->precision) ? ft_atoi((*maillon)->precision) : 0;
 	if ((*maillon)->att_plus)
 		(*maillon)->chaine = modif_plus(maillon, '+');	
 	if (!(*maillon)->att_plus && (*maillon)->att_espace)
 		(*maillon)->chaine = modif_plus(maillon, ' ');	
-//	if ((*maillon)->att_hash)
-
 	if ((*maillon)->precision != NULL)
-		(*maillon)->chaine = modif_precision(maillon);
-	if ((*maillon)->largeur != NULL && ft_atoi((*maillon)->largeur) > ft_strlen((*maillon)->chaine))
-		(*maillon)->chaine = gestion_largeur(maillon);
+		(*maillon)->chaine = modif_precision(maillon, precision, initial);
+	if (largeur && largeur > initial)
+		(*maillon)->chaine = gestion_largeur(maillon, largeur, initial);
 	return (1);
 }
 

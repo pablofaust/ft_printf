@@ -26,26 +26,6 @@ int		remplir_chaine(char *arg, t_maillon **maillon)
 	return (1);
 }
 
-int		conversion_s(va_list ap, t_maillon **maillon)
-{
-	if ((*maillon)->conversion == 's')
-	{
-		if (!(remplir_chaine((char*)va_arg(ap, const char*), maillon)))
-			return (0);
-	}
-	if ((*maillon)->conversion == 'S')
-	{
-		wchar_t		*sw;
-
-		sw = va_arg(ap, wchar_t *);
-		while (*sw)
-		{
-			printf("%s\n", ft_itoa_base_ll(*sw, 2));
-			sw++;
-		}
-	}
-	return (1);
-}
 
 int		conversion_p_x(va_list ap, t_maillon **maillon)
 {

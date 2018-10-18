@@ -115,7 +115,7 @@ int				conversion(const char *format, int **i, t_maillon **maillon)
 		return (0);
 	(*maillon)->conversion = format[**i];
 	if ((*maillon)->conversion == 's' || (*maillon)->conversion == 'S')
-		(*maillon)->fonction = conversion_s;
+		(*maillon)->fonction = conversion_char;
 	else if ((*maillon)->conversion == 'p' || (*maillon)->conversion == 'x' || (*maillon)->conversion == 'X')
 		(*maillon)->fonction = conversion_p_x;
 	else if ((*maillon)->conversion == 'd' || (*maillon)->conversion == 'D' ||  (*maillon)->conversion == 'i')

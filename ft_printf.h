@@ -51,8 +51,10 @@ int				conversion_d_i(va_list ap, t_maillon **maillon);
 int				conversion_o(va_list ap, t_maillon **maillon);
 int				conversion_u(va_list ap, t_maillon **maillon);
 int				conversion_c(va_list ap, t_maillon **maillon);
+int				conversion_char(va_list ap, t_maillon **maillon);
 int				conversion_int(va_list ap, t_maillon **maillon);
+char			trans_modif(char *modif);
 char			*modif_plus(t_maillon **maillon, char c);
-char			*modif_precision(t_maillon **maillon);
-char			*gestion_largeur(t_maillon **maillon);
+char			*modif_precision(t_maillon **maillon, int precision, int initial);
+char			*gestion_largeur(t_maillon **maillon, int largeur, int initial);
 #endif

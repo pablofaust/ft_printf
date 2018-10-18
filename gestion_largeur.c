@@ -1,5 +1,23 @@
 #include "ft_printf.h"
 
+char		*largeur_zeros(t_maillon **maillon, char *nouvelle, int largeur)
+{
+	char	*chaine;
+	int		i;
+	int		j;
+
+	chaine = (*maillon)->chaine;
+	if (chaine[0] == '+' || chaine[0] == '-' || chaine[0] == ' ')
+		nouvelle[0] = chaine[0];
+	i = (chaine[0] == '+' || chaine[0] == '-' || chaine[0] == ' ') ? 1 : 0;
+	j = (chaine[0] == '+' || chaine[0] == '-' || chaine[0] == ' ') ? 1 : 0;
+	while (i < largeur - ft_strlen(chaine) + j)
+		nouvelle[i++] = '0';
+	while (chaine[j])
+		nouvelle[i++] = chaine[j++];
+	return (nouvelle);
+}
+
 char		*largeur_av(t_maillon **maillon, char *nouvelle, int largeur)
 {
 	char	*chaine;
@@ -41,7 +59,12 @@ char		*gestion_largeur(t_maillon **maillon)
 	if ((*maillon)->att_moins)
 		nouvelle = largeur_apr(maillon, nouvelle, largeur);
 	else
-		nouvelle = largeur_av(maillon, nouvelle, largeur);
+	{
+		if ((*maillon)->att_zero && (*maillon)->precision == NULL)
+			nouvelle = largeur_zeros(maillon, nouvelle, largeur);
+		else
+			nouvelle = largeur_av(maillon, nouvelle, largeur);
+	}
 	free((*maillon)->chaine);
 	return (nouvelle);
 }

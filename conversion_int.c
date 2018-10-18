@@ -10,8 +10,8 @@ int			ecrit_int(t_maillon **maillon)
 
 	if ((*maillon)->precision != NULL)
 		(*maillon)->chaine = modif_precision(maillon);
-//	if ((*maillon)->largeur != NULL && ft_atoi(*maillon)->largeur > ft_strlen((*maillon)->chaine))
-//		(*maillon)->chaine = gestion_largeur(maillon);
+	if ((*maillon)->largeur != NULL && ft_atoi((*maillon)->largeur) > ft_strlen((*maillon)->chaine))
+		(*maillon)->chaine = gestion_largeur(maillon);
 	return (1);
 }
 

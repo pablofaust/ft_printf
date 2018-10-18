@@ -6,7 +6,7 @@
 #    By: pfaust <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 11:10:04 by pfaust            #+#    #+#              #
-#    Updated: 2018/10/17 10:12:07 by pfaust           ###   ########.fr        #
+#    Updated: 2018/10/18 10:42:05 by pfaust           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ SOURCE 		= ft_printf.c \
 			  traitement.c \
 			  conversions.c \
 			  conversion_int.c \
-			  modif_att.c \
-			  modif_precision.c
+			  gestion_att.c \
+			  gestion_precision.c \
+			  gestion_largeur.c
 
 OBJ 		= $(SOURCE:.c=.o)
 

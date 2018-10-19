@@ -6,7 +6,7 @@
 #    By: pfaust <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 11:10:04 by pfaust            #+#    #+#              #
-#    Updated: 2018/10/19 11:17:50 by pfaust           ###   ########.fr        #
+#    Updated: 2018/10/19 12:56:07 by pfaust           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ SOURCE 		= ft_printf.c \
 			  gestion_att.c \
 			  gestion_precision.c \
 			  gestion_largeur.c \
-			  hash_modif.c \
 
 OBJ 		= $(SOURCE:.c=.o)
 

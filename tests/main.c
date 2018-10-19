@@ -130,6 +130,35 @@ int			main()
 	printf ("\033[32;01m%-25p\033[00m\n", &a);
 	ft_printf ("%-25p\n\n", &a);
 
+	printf("--- TEST CONVERSION %%o ---\n\n");
+
+	printf("--- TEST  %%o positif ---\n\n");
+
+	printf ("\033[32;01m%o\033[00m\n", 34545);
+	ft_printf ("%o\n\n", 34545);
+
+	printf("--- TEST  %%o negatif ---\n\n");
+
+	printf ("\033[32;01m%o\033[00m\n", -34545);
+	ft_printf ("%o\n\n", -34545);
+
+	printf("--- TEST  %%o positif avec attributs ---\n\n");
+
+	printf ("\033[32;01m%#o\033[00m\n", 34545);
+	ft_printf ("%#o\n", 34545);
+	printf ("\033[32;01m%0o\033[00m\n", 34545);
+	ft_printf ("%0o\n", 34545);
+	printf ("\033[32;01m%-o\033[00m\n", 34545);
+	ft_printf ("%-o\n", 34545);
+
+	printf("--- TEST  %%o negatif avec attributs ---\n\n");
+
+	printf ("\033[32;01m%#o\033[00m\n", -34545);
+	ft_printf ("%#o\n", -34545);
+	printf ("\033[32;01m%0o\033[00m\n", -34545);
+	ft_printf ("%0o\n", -34545);
+	printf ("\033[32;01m%-o\033[00m\n", -34545);
+	ft_printf ("%-o\n", -34545);
 //	printf("--- TEST %%ls ---\n\n");
  	
 //	setlocale(LC_ALL, "en_US.UTF-8"); 

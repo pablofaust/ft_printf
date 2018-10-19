@@ -121,7 +121,7 @@ int				conversion(const char *format, int **i, t_maillon **maillon)
 	else if ((*maillon)->conversion == 'd' || (*maillon)->conversion == 'D' ||  (*maillon)->conversion == 'i')
 		(*maillon)->fonction = conversion_int;
 	else if ((*maillon)->conversion == 'o' || (*maillon)->conversion == 'O')
-		(*maillon)->fonction = conversion_o;
+		(*maillon)->fonction = conversion_uint;
 	else if ((*maillon)->conversion == 'u' || (*maillon)->conversion == 'U')
 		(*maillon)->fonction = conversion_u;
 	else if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')

@@ -1,5 +1,16 @@
 #include "ft_printf.h"
 
+int			connaitre_base(char	c)
+{
+	if (c == 'x' || c == 'X' || c == 'p')
+		return (16);
+	else if (c == 'o' || c == 'O')
+		return (8);
+	else if (c == 'b')
+		return (2);
+	return (10);
+}
+
 char		*hexa (long long arg, t_maillon **maillon)
 {
 	char	*chaine;
@@ -51,6 +62,18 @@ char		trans_modif(char *modif)
 	}
 	else
 		return ('0');
+}
+
+int			conversion_uint(va_list ap, t_maillon **maillon)
+{
+	char	*chaine;
+	int		base;
+
+	chaine = NULL;
+	base = connaitre_base((*maillon)->conversion);
+	chaine = ft_itoa_base(va_arg(ap, int), base);
+	(*maillon)->chaine = chaine;
+	return (ecrit_int(maillon));
 }
 
 int			conversion_int(va_list ap, t_maillon **maillon)

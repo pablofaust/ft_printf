@@ -1,5 +1,20 @@
 #include "ft_printf.h"
 
+char		*hexa (long long arg, t_maillon **maillon)
+{
+	char	*chaine;
+	char	*itoa;
+
+	chaine = (*maillon)->chaine;
+	if (!(itoa = ft_itoa_base_ll(arg, 16)))
+		return (chaine);
+	if (!(chaine = ft_strnew(ft_strlen(itoa) + 2)))
+		return (chaine);
+	if (!(chaine = ft_strjoin("0x", itoa)))
+		return (chaine);
+	return (chaine);
+}
+
 int			ecrit_int(t_maillon **maillon)
 {
 	int		largeur;
@@ -45,7 +60,9 @@ int			conversion_int(va_list ap, t_maillon **maillon)
 
 	chaine = NULL;
 	modif = ((*maillon)->modificateur ) ? trans_modif((*maillon)->modificateur) : '0';
-	if (modif == '0' || modif == 'L')
+	if ((*maillon)->conversion == 'p')
+		chaine = hexa((long long)va_arg(ap, void*), maillon);
+	else if (modif == '0' || modif == 'L')
 		chaine = ft_itoa(va_arg(ap, int));
 	else if (modif == 'H')
 		chaine = ft_itoa((char)va_arg(ap, int));

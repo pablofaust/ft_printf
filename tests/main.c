@@ -106,6 +106,30 @@ int			main()
 	printf ("\033[32;01m%-12.5s\033[00m\n", "Jusqu'ici tout va bien");
 	ft_printf ("%-12.5s\n\n", "Jusqu'ici tout va bien");
 
+
+	printf("--- TEST CONVERSION %%p ---\n\n");
+	printf("--- TEST  %%p ---\n\n");
+
+	char	a;
+	int		b;
+
+	printf ("\033[32;01m%p\033[00m\n", &a);
+	ft_printf ("%p\n", &a);
+	printf ("\033[32;01m%p\033[00m\n", &b);
+	ft_printf ("%p\n\n", &b);
+	
+	printf("--- TEST  %%p avec attributs ---\n\n");
+
+	printf ("\033[32;01m%-p\033[00m\n", &a);
+	ft_printf ("%-p\n\n", &a);
+
+	printf("--- TEST %%p avec largeur ---\n\n");
+
+	printf ("\033[32;01m%25p\033[00m\n", &a);
+	ft_printf ("%25p\n\n", &a);
+	printf ("\033[32;01m%-25p\033[00m\n", &a);
+	ft_printf ("%-25p\n\n", &a);
+
 //	printf("--- TEST %%ls ---\n\n");
  	
 //	setlocale(LC_ALL, "en_US.UTF-8"); 

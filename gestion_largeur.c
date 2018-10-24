@@ -23,10 +23,16 @@ char		*largeur_av(t_maillon **maillon, char *nouvelle, int largeur, int initial)
 	char	*chaine;
 	int		i;
 	int		j;
+	int		add;
 
+	add = 0;
+	if ((*maillon)->conversion == 'o' && (*maillon)->att_hash)
+		add = 1;
+	else if ((*maillon)->conversion == 'x' && (*maillon)->att_hash)
+		add = 2;
 	chaine = (*maillon)->chaine;
 	i = 0;
-	while (i < largeur - initial - (*maillon)->att_hash)
+	while (i < largeur - initial - add)
 		nouvelle[i++] = ' ';
 	j = 0;
 	while (chaine[j])

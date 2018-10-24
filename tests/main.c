@@ -213,25 +213,25 @@ int			main()
 	printf("--- TEST  %%u positif avec attributs ---\n\n");
 
 	printf ("\033[32;01m%0u\033[00m\n", 34545);
-	ft_printf ("%0u\n", 34545);
+	ft_printf ("%0u\n\n", 34545);
 	printf ("\033[32;01m%-u\033[00m\n", 34545);
-	ft_printf ("%-u\n", 34545);
+	ft_printf ("%-u\n\n", 34545);
 
 	printf("--- TEST  %%u negatif avec attributs ---\n\n");
 
 	printf ("\033[32;01m%0u\033[00m\n", -34545);
-	ft_printf ("%0u\n", -34545);
+	ft_printf ("%0u\n\n", -34545);
 	printf ("\033[32;01m%-u\033[00m\n", -34545);
-	ft_printf ("%-u\n", -34545);
+	ft_printf ("%-u\n\n", -34545);
 
 	printf("--- TEST  %%u positif avec largeur ---\n\n");
 
 	printf ("\033[32;01m%34u\033[00m\n", 34545);
-	ft_printf ("%34u\n", 34545);
+	ft_printf ("%34u\n\n", 34545);
 	printf ("\033[32;01m%034u\033[00m\n", 34545);
-	ft_printf ("%034u\n", 34545);
+	ft_printf ("%034u\n\n", 34545);
 	printf ("\033[32;01m%-34u\033[00m\n", 34545);
-	ft_printf ("%-34u\n", 34545);
+	ft_printf ("%-34u\n\n", 34545);
 
 	printf("--- TEST  %%u negatif avec largeur ---\n\n");
 
@@ -240,7 +240,76 @@ int			main()
 	printf ("\033[32;01m%034u\033[00m\n", -34545);
 	ft_printf ("%034u\n", -34545);
 	printf ("\033[32;01m%-34u\033[00m\n", -34545);
-	ft_printf ("%-34u\n", -34545);
+	ft_printf ("%-34u\n\n", -34545);
+
+	printf("--- TEST CONVERSION %%x ---\n\n");
+
+	printf("--- TEST  %%x positif ---\n\n");
+
+	printf ("\033[32;01m%x\033[00m\n", 34545);
+	ft_printf ("%x\n\n", 34545);
+
+	printf("--- TEST  %%x negatif ---\n\n");
+
+	printf ("\033[32;01m%x\033[00m\n", -34545);
+	ft_printf ("%x\n\n", -34545);
+
+	printf("--- TEST  %%x positif avec attributs ---\n\n");
+
+	printf ("\033[32;01m%#x\033[00m\n", 34545);
+	ft_printf ("%#x\n", 34545);
+	printf ("\033[32;01m%0x\033[00m\n", 34545);
+	ft_printf ("%0x\n", 34545);
+	printf ("\033[32;01m%-x\033[00m\n", 34545);
+	ft_printf ("%-x\n", 34545);
+	printf ("\033[32;01m%#0x\033[00m\n", 34545);
+	ft_printf ("%#0x\n", 34545);
+	printf ("\033[32;01m%#-x\033[00m\n", 34545);
+	ft_printf ("%#-x\n\n", 34545);
+
+	printf("--- TEST  %%x negatif avec attributs ---\n\n");
+
+	printf ("\033[32;01m%#x\033[00m\n", -34545);
+	ft_printf ("%#x\n", -34545);
+	printf ("\033[32;01m%0x\033[00m\n", -34545);
+	ft_printf ("%0x\n", -34545);
+	printf ("\033[32;01m%-x\033[00m\n", -34545);
+	ft_printf ("%-x\n", -34545);
+	printf ("\033[32;01m%#0x\033[00m\n", -34545);
+	ft_printf ("%#0x\n", -34545);
+	printf ("\033[32;01m%#-x\033[00m\n", -34545);
+	ft_printf ("%#-x\n\n", -34545);
+
+	printf("--- TEST  %%x positif avec largeur ---\n\n");
+
+	printf ("\033[32;01m%34x\033[00m\n", 34545);
+	ft_printf ("%34x\n", 34545);
+	printf ("\033[32;01m%#34x\033[00m\n", 34545);
+	ft_printf ("%#34x\n", 34545);
+	printf ("\033[32;01m%034x\033[00m\n", 34545);
+	ft_printf ("%034x\n", 34545);
+	printf ("\033[32;01m%-34x\033[00m\n", 34545);
+	ft_printf ("%-34x\n", 34545);
+	printf ("\033[32;01m%#034x\033[00m\n", 34545);
+	ft_printf ("%#034x\n", 34545);
+	printf ("\033[32;01m%#-34x\033[00m\n", 34545);
+	ft_printf ("%#-34x\n\n", 34545);
+
+	printf("--- TEST  %%x negatif avec largeur ---\n\n");
+
+	printf ("\033[32;01m%34x\033[00m\n", -34545);
+	ft_printf ("%34x\n", -34545);
+	printf ("\033[32;01m%#34x\033[00m\n", -34545);
+	ft_printf ("%#34x\n", -34545);
+	printf ("\033[32;01m%034x\033[00m\n", -34545);
+	ft_printf ("%034x\n", -34545);
+	printf ("\033[32;01m%-34x\033[00m\n", -34545);
+	ft_printf ("%-34x\n", -34545);
+	printf ("\033[32;01m%#034x\033[00m\n", -34545);
+	ft_printf ("%#034x\n", -34545);
+	printf ("\033[32;01m%#-34x\033[00m\n", -34545);
+	ft_printf ("%#-34x\n\n", -34545);
+
 
 //	printf("--- TEST %%ls ---\n\n");
  	

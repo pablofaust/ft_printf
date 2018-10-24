@@ -16,10 +16,29 @@ char		*ajout_zero_o(char *chaine)
 	return (nouvelle);
 }
 
+char		*ajout_0x_x(char *chaine)
+{
+	int		lon;
+	char	*nouvelle;
+
+	lon = ft_strlen(chaine);
+	if (lon == 1 && chaine[0] == '0')
+		return (chaine);
+	if (!(nouvelle = ft_strnew(lon + 2)))
+		return (chaine);
+	nouvelle[0] = '0';
+	nouvelle[1] = 'x';
+	nouvelle = ft_strncat(nouvelle, chaine, lon);
+	free(chaine);
+	return (nouvelle);
+}
+
 char		*modif_hash(t_maillon **maillon, char c)
 {
 	if (c == 'o')
 		return (ajout_zero_o((*maillon)->chaine));
+	else if (c == 'x')
+		return (ajout_0x_x((*maillon)->chaine));
 	return ((*maillon)->chaine);
 }
 

@@ -26,7 +26,7 @@ char		*largeur_av(t_maillon **maillon, char *nouvelle, int largeur, int initial)
 
 	chaine = (*maillon)->chaine;
 	i = 0;
-	while (i < largeur - initial)
+	while (i < largeur - initial - (*maillon)->att_hash)
 		nouvelle[i++] = ' ';
 	j = 0;
 	while (chaine[j])

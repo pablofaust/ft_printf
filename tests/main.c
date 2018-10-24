@@ -150,6 +150,10 @@ int			main()
 	ft_printf ("%0o\n", 34545);
 	printf ("\033[32;01m%-o\033[00m\n", 34545);
 	ft_printf ("%-o\n", 34545);
+	printf ("\033[32;01m%#0o\033[00m\n", 34545);
+	ft_printf ("%#0o\n", 34545);
+	printf ("\033[32;01m%#-o\033[00m\n", 34545);
+	ft_printf ("%#-o\n\n", 34545);
 
 	printf("--- TEST  %%o negatif avec attributs ---\n\n");
 
@@ -159,6 +163,42 @@ int			main()
 	ft_printf ("%0o\n", -34545);
 	printf ("\033[32;01m%-o\033[00m\n", -34545);
 	ft_printf ("%-o\n", -34545);
+	printf ("\033[32;01m%#0o\033[00m\n", -34545);
+	ft_printf ("%#0o\n", -34545);
+	printf ("\033[32;01m%#-o\033[00m\n", -34545);
+	ft_printf ("%#-o\n\n", -34545);
+
+	printf("--- TEST  %%o positif avec largeur ---\n\n");
+
+	printf ("\033[32;01m%34o\033[00m\n", 34545);
+	ft_printf ("%34o\n", 34545);
+	printf ("\033[32;01m%#34o\033[00m\n", 34545);
+	ft_printf ("%#34o\n", 34545);
+	printf ("\033[32;01m%034o\033[00m\n", 34545);
+	ft_printf ("%034o\n", 34545);
+	printf ("\033[32;01m%-34o\033[00m\n", 34545);
+	ft_printf ("%-34o\n", 34545);
+	printf ("\033[32;01m%#034o\033[00m\n", 34545);
+	ft_printf ("%#034o\n", 34545);
+	printf ("\033[32;01m%#-34o\033[00m\n", 34545);
+	ft_printf ("%#-34o\n\n", 34545);
+
+	printf("--- TEST  %%o negatif avec largeur ---\n\n");
+
+	printf ("\033[32;01m%34o\033[00m\n", -34545);
+	ft_printf ("%34o\n", -34545);
+	printf ("\033[32;01m%#34o\033[00m\n", -34545);
+	ft_printf ("%#34o\n", -34545);
+	printf ("\033[32;01m%034o\033[00m\n", -34545);
+	ft_printf ("%034o\n", -34545);
+	printf ("\033[32;01m%-34o\033[00m\n", -34545);
+	ft_printf ("%-34o\n", -34545);
+	printf ("\033[32;01m%#034o\033[00m\n", -34545);
+	ft_printf ("%#034o\n", -34545);
+	printf ("\033[32;01m%#-34o\033[00m\n", -34545);
+	ft_printf ("%#-34o\n\n", -34545);
+
+
 //	printf("--- TEST %%ls ---\n\n");
  	
 //	setlocale(LC_ALL, "en_US.UTF-8"); 

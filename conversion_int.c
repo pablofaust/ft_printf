@@ -35,6 +35,8 @@ int			ecrit_int(t_maillon **maillon)
 	largeur = ((*maillon)->largeur) ? ft_atoi((*maillon)->largeur) : 0;
 	initial = ft_strlen((*maillon)->chaine);
 	precision = ((*maillon)->precision) ? ft_atoi((*maillon)->precision) : 0;
+	if ((*maillon)->att_hash)
+		((*maillon)->chaine = modif_hash(maillon, (*maillon)->conversion));
 	if ((*maillon)->att_plus)
 		(*maillon)->chaine = modif_plus(maillon, '+');	
 	if (!(*maillon)->att_plus && (*maillon)->att_espace)
@@ -71,7 +73,7 @@ int			conversion_uint(va_list ap, t_maillon **maillon)
 
 	chaine = NULL;
 	base = connaitre_base((*maillon)->conversion);
-	chaine = ft_itoa_base(va_arg(ap, int), base);
+	chaine = ft_itoa_base_uint(va_arg(ap, unsigned int), base);
 	(*maillon)->chaine = chaine;
 	return (ecrit_int(maillon));
 }

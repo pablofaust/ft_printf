@@ -139,16 +139,16 @@ int			main()
 //	ft_printf ("%-12c\n", 'a');
 
 
-	printf("--- TEST  %%c avec modificateurs ---\n\n");
-
-	printf ("\033[32;01m%lc\033[00m\n", 'a');
-	ft_printf ("%lc\n", 'a');
-	printf ("\033[32;01m%-lc\033[00m\n", 'a');
-	ft_printf ("%-lc\n", 'a');
-	printf ("\033[32;01m%12lc\033[00m\n", 'a');
-	ft_printf ("%12lc\n", 'a');
-	printf ("\033[32;01m%-12lc\033[00m\n", 'a');
-	ft_printf ("%-12lc\n", 'a');
+//	printf("--- TEST  %%c avec modificateurs ---\n\n");
+//
+//	printf ("\033[32;01m%lc\033[00m\n", 'a');
+//	ft_printf ("%lc\n", 'a');
+//	printf ("\033[32;01m%-lc\033[00m\n", 'a');
+//	ft_printf ("%-lc\n", 'a');
+//	printf ("\033[32;01m%12lc\033[00m\n", 'a');
+//	ft_printf ("%12lc\n", 'a');
+//	printf ("\033[32;01m%-12lc\033[00m\n", 'a');
+//	ft_printf ("%-12lc\n", 'a');
 
 //	printf("--- TEST CONVERSION %%p ---\n\n");
 //	printf("--- TEST  %%p ---\n\n");
@@ -173,6 +173,7 @@ int			main()
 //	printf ("\033[32;01m%-25p\033[00m\n", &a);
 //	ft_printf ("%-25p\n\n", &a);
 //
+
 //	printf("--- TEST CONVERSION %%o ---\n\n");
 //
 //	printf("--- TEST  %%o positif ---\n\n");
@@ -241,6 +242,34 @@ int			main()
 //	printf ("\033[32;01m%#-34o\033[00m\n", -34545);
 //	ft_printf ("%#-34o\n\n", -34545);
 //
+	printf("--- TEST  %%o positif avec modificateurs ---\n\n");
+	
+	unsigned long		ul;
+	unsigned long long	ull;
+	unsigned short		us;
+	unsigned char		uc;
+	uintmax_t		umax;
+	size_t			size;
+
+	ul = 34545;
+	ull = 34545;
+	us = 34545;
+	uc = 46;
+	umax = 34545;
+	size = 34545;
+	printf ("\033[32;01m%lo\033[00m\n", ul);
+	ft_printf ("%lo\n", ul);
+	printf ("\033[32;01m%llo\033[00m\n", ull);
+	ft_printf ("%llo\n", ull);
+	printf ("\033[32;01m%ho\033[00m\n", us);
+	ft_printf ("%ho\n", us);
+	printf ("\033[32;01m%hho\033[00m\n", uc);
+	ft_printf ("%hho\n", uc);
+	printf ("\033[32;01m%jo\033[00m\n", umax);
+	ft_printf ("%jo\n", umax);
+	printf ("\033[32;01m%zo\033[00m\n", size);
+	ft_printf ("%zo\n", size);
+
 //	printf("--- TEST CONVERSION %%u ---\n\n");
 //
 //	printf("--- TEST  %%u positif ---\n\n");

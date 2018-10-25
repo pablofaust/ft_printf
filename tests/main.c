@@ -75,67 +75,81 @@ int			main()
 //	ft_printf("nombre = %#034.54ld, caractere = %+- 23.54hhs\n");
 //
 
-	printf("--- TEST CONVERSION %%s ---\n\n");
-	printf("--- TEST  %%s ---\n\n");
-	
-	printf ("\033[32;01m%s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%s\n", "Jusqu'ici tout va bien");
-	printf ("\033[32;01m%s\033[00m\n", "034958");
-	ft_printf ("%s\n\n", "034958");
+//	printf("--- TEST CONVERSION %%s ---\n\n");
+//	printf("--- TEST  %%s ---\n\n");
+//	
+//	printf ("\033[32;01m%s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%s\n", "Jusqu'ici tout va bien");
+//	printf ("\033[32;01m%s\033[00m\n", "034958");
+//	ft_printf ("%s\n\n", "034958");
+//
+//	printf("--- TEST %%s avec attributs ---\n\n");
+//
+//	printf ("\033[32;01m%-s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%-s\n\n", "Jusqu'ici tout va bien");
+//	
+//	printf("--- TEST %%s avec largeur ---\n\n");
+//
+//	printf ("\033[32;01m%25s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%25s\n", "Jusqu'ici tout va bien");
+//	printf ("\033[32;01m%-25s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%-25s\n\n", "Jusqu'ici tout va bien");
+//
+//	printf("--- TEST %%s avec precision ---\n\n");
+//
+//	printf ("\033[32;01m%.5s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%.5s\n", "Jusqu'ici tout va bien");
+//	printf ("\033[32;01m%-.5s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%-.5s\n", "Jusqu'ici tout va bien");
+//	printf ("\033[32;01m%12.5s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%12.5s\n", "Jusqu'ici tout va bien");
+//	printf ("\033[32;01m%-12.5s\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%-12.5s\n\n", "Jusqu'ici tout va bien");
+//
+//	printf("--- TEST %%s avec modificateurs ---\n\n");
+//
+//	printf ("\033[32;01m%ls\033[00m\n", "Jusqu'ici tout va bien");
+//	ft_printf ("%ls\n", "Jusqu'ici tout va bien");
+//	// NE FONCTIONNE PAS
 
-	printf("--- TEST %%s avec attributs ---\n\n");
+//	printf("--- TEST CONVERSION %%c ---\n\n");
+//	printf("--- TEST  %%c simple ---\n\n");
+//
+//	printf ("\033[32;01m%c\033[00m\n", 'a');
+//	ft_printf ("%c\n", 'a');
+//	printf ("\033[32;01m%c\033[00m\n", ' ');
+//	ft_printf ("%c\n", ' ');
+//	printf ("\033[32;01m%c\033[00m\n", '\n');
+//	ft_printf ("%c\n", '\n');
+//	printf ("\033[32;01m%c\033[00m\n", '\0');
+//	ft_printf ("%c\n\n", '\0');
+//
+//	printf("--- TEST  %%c avec attributs ---\n\n");
+//
+//	printf ("\033[32;01m%-c\033[00m\n", 'a');
+//	ft_printf ("%-c\n", 'a');
+//	printf ("\033[32;01m%-c\033[00m\n", '\0');
+//	ft_printf ("%-c\n\n", '\0');
+//
+//	printf("--- TEST  %%c avec largeur ---\n\n");
+//
+//	printf ("\033[32;01m%12c\033[00m\n", 'a');
+//	ft_printf ("%12c\n", 'a');
+//	printf ("\033[32;01m%-12c\033[00m\n", 'a');
+//	ft_printf ("%-12c\n", 'a');
 
-	printf ("\033[32;01m%-s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%-s\n\n", "Jusqu'ici tout va bien");
-	
-	printf("--- TEST %%s avec largeur ---\n\n");
 
-	printf ("\033[32;01m%25s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%25s\n", "Jusqu'ici tout va bien");
-	printf ("\033[32;01m%-25s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%-25s\n\n", "Jusqu'ici tout va bien");
+	printf("--- TEST  %%c avec modificateurs ---\n\n");
 
-	printf("--- TEST %%s avec precision ---\n\n");
+	printf ("\033[32;01m%lc\033[00m\n", 'a');
+	ft_printf ("%lc\n", 'a');
+	printf ("\033[32;01m%-lc\033[00m\n", 'a');
+	ft_printf ("%-lc\n", 'a');
+	printf ("\033[32;01m%12lc\033[00m\n", 'a');
+	ft_printf ("%12lc\n", 'a');
+	printf ("\033[32;01m%-12lc\033[00m\n", 'a');
+	ft_printf ("%-12lc\n", 'a');
 
-	printf ("\033[32;01m%.5s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%.5s\n", "Jusqu'ici tout va bien");
-	printf ("\033[32;01m%-.5s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%-.5s\n", "Jusqu'ici tout va bien");
-	printf ("\033[32;01m%12.5s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%12.5s\n", "Jusqu'ici tout va bien");
-	printf ("\033[32;01m%-12.5s\033[00m\n", "Jusqu'ici tout va bien");
-	ft_printf ("%-12.5s\n\n", "Jusqu'ici tout va bien");
-
-
-	printf("--- TEST CONVERSION %%c ---\n\n");
-	printf("--- TEST  %%c simple ---\n\n");
-
-	printf ("\033[32;01m%c\033[00m\n", 'a');
-	ft_printf ("%c\n", 'a');
-	printf ("\033[32;01m%c\033[00m\n", ' ');
-	ft_printf ("%c\n", ' ');
-	printf ("\033[32;01m%c\033[00m\n", '\n');
-	ft_printf ("%c\n", '\n');
-	printf ("\033[32;01m%c\033[00m\n", '\0');
-	ft_printf ("%c\n\n", '\0');
-
-	printf("--- TEST  %%c avec attributs ---\n\n");
-
-	printf ("\033[32;01m%-c\033[00m\n", 'a');
-	ft_printf ("%-c\n", 'a');
-	printf ("\033[32;01m%-c\033[00m\n", '\0');
-	ft_printf ("%-c\n\n", '\0');
-
-	printf("--- TEST  %%c avec largeur ---\n\n");
-
-	printf ("\033[32;01m%12c\033[00m\n", 'a');
-	ft_printf ("%12c\n", 'a');
-	printf ("\033[32;01m%-12c\033[00m\n", 'a');
-	ft_printf ("%-12c\n", 'a');
-
-//	printf("--- TEST CONVERSION %%p ---\n\n");
-//	printf("--- TEST CONVERSION %%p ---\n\n");
-//	printf("--- TEST CONVERSION %%p ---\n\n");
 //	printf("--- TEST CONVERSION %%p ---\n\n");
 //	printf("--- TEST  %%p ---\n\n");
 //

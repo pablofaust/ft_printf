@@ -117,13 +117,11 @@ int				conversion(const char *format, int **i, t_maillon **maillon)
 		return (0);
 	c = format[**i];
 	(*maillon)->conversion = c;
-	if (c == 's' || c == 'S')
+	if (c == 's' || c == 'S' || c == 'c' || c == 'C')
 		(*maillon)->fonction = conversion_char;
 	else if (c == 'd' || c == 'D' || c == 'i' || c == 'p')
 		(*maillon)->fonction = conversion_int;
 	else if (c == 'o' || c == 'O' || c == 'x' || c == 'X' || c == 'u' || c == 'U')
 		(*maillon)->fonction = conversion_uint;
-	else if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')
-		(*maillon)->fonction = conversion_c;
 	return (1);
 }

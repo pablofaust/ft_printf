@@ -21,11 +21,18 @@ int		conversion_char(va_list ap, t_maillon **maillon)
 {
 	char	*chaine;
 	char	modif;
+	char	c;
 
 	chaine = NULL;
 	modif = ((*maillon)->modificateur ) ? trans_modif((*maillon)->modificateur) : '0';
 	if ((*maillon)->conversion == 's' && modif != 'l')
 		chaine = va_arg(ap, char*);
+	if ((*maillon)->conversion == 'c')
+	{
+		c = va_arg(ap, int);
+		chaine = ft_strnew(1);
+		chaine[0] = c;
+	}
 //	printf("%s\n", chaine);
 //	if ((*maillon)->conversion == 'S')
 //	{

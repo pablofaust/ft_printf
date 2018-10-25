@@ -242,7 +242,7 @@ int			main()
 //	printf ("\033[32;01m%#-34o\033[00m\n", -34545);
 //	ft_printf ("%#-34o\n\n", -34545);
 //
-	printf("--- TEST  %%o positif avec modificateurs ---\n\n");
+//	printf("--- TEST  %%o positif avec modificateurs ---\n\n");
 	
 	unsigned long		ul;
 	unsigned long long	ull;
@@ -257,19 +257,19 @@ int			main()
 	uc = 46;
 	umax = 34545;
 	size = 34545;
-	printf ("\033[32;01m%lo\033[00m\n", ul);
-	ft_printf ("%lo\n", ul);
-	printf ("\033[32;01m%llo\033[00m\n", ull);
-	ft_printf ("%llo\n", ull);
-	printf ("\033[32;01m%ho\033[00m\n", us);
-	ft_printf ("%ho\n", us);
-	printf ("\033[32;01m%hho\033[00m\n", uc);
-	ft_printf ("%hho\n", uc);
-	printf ("\033[32;01m%jo\033[00m\n", umax);
-	ft_printf ("%jo\n", umax);
-	printf ("\033[32;01m%zo\033[00m\n", size);
-	ft_printf ("%zo\n", size);
-
+//	printf ("\033[32;01m%lo\033[00m\n", ul);
+//	ft_printf ("%lo\n", ul);
+//	printf ("\033[32;01m%llo\033[00m\n", ull);
+//	ft_printf ("%llo\n", ull);
+//	printf ("\033[32;01m%ho\033[00m\n", us);
+//	ft_printf ("%ho\n", us);
+//	printf ("\033[32;01m%hho\033[00m\n", uc);
+//	ft_printf ("%hho\n", uc);
+//	printf ("\033[32;01m%jo\033[00m\n", umax);
+//	ft_printf ("%jo\n", umax);
+//	printf ("\033[32;01m%zo\033[00m\n", size);
+//	ft_printf ("%zo\n", size);
+//
 //	printf("--- TEST CONVERSION %%u ---\n\n");
 //
 //	printf("--- TEST  %%u positif ---\n\n");
@@ -314,6 +314,22 @@ int			main()
 //	printf ("\033[32;01m%-34u\033[00m\n", -34545);
 //	ft_printf ("%-34u\n\n", -34545);
 //
+	printf("--- TEST  %%u positif avec modificateurs ---\n\n");
+
+	printf ("\033[32;01m%lu\033[00m\n", ul);
+	ft_printf ("%lu\n", ul);
+	printf ("\033[32;01m%llu\033[00m\n", ull);
+	ft_printf ("%llu\n", ull);
+	printf ("\033[32;01m%hu\033[00m\n", us);
+	ft_printf ("%hu\n", us);
+	printf ("\033[32;01m%hhu\033[00m\n", uc);
+	ft_printf ("%hhu\n", uc);
+	printf ("\033[32;01m%ju\033[00m\n", umax);
+	ft_printf ("%ju\n", umax);
+	printf ("\033[32;01m%zu\033[00m\n", size);
+	ft_printf ("%zu\n\n", size);
+
+
 //	printf("--- TEST CONVERSION %%x ---\n\n");
 //
 //	printf("--- TEST  %%x positif ---\n\n");

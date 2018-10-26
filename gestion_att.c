@@ -35,7 +35,7 @@ char		*ajout_0x_x(char c, char *chaine)
 
 char		*modif_hash(t_maillon **maillon, char c)
 {
-	if (c == 'o')
+	if (c == 'o' || c == 'O')
 		return (ajout_zero_o((*maillon)->chaine));
 	else if (c == 'x' || c == 'X')
 		return (ajout_0x_x((*maillon)->conversion, (*maillon)->chaine));

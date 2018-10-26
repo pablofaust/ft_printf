@@ -296,89 +296,89 @@ int			main()
 //	printf ("\033[32;01m%zo\033[00m\n", size);
 //	ft_printf ("%zo\n", size);
 //
-	printf("--- TEST CONVERSION %%O ---\n\n");
-
-	printf("--- TEST  %%O pOsitif ---\n\n");
-
-	printf ("\033[32;01m%O\033[00m\n", 34545);
-	ft_printf ("%O\n\n", 34545);
-
-	printf("--- TEST  %%O negatif ---\n\n");
-
-	printf ("\033[32;01m%O\033[00m\n", -34545);
-	ft_printf ("%O\n\n", -34545);
-
-	printf("--- TEST  %%O pOsitif avec attributs ---\n\n");
-
-	printf ("\033[32;01m%#O\033[00m\n", 34545);
-	ft_printf ("%#O\n", 34545);
-	printf ("\033[32;01m%0O\033[00m\n", 34545);
-	ft_printf ("%0O\n", 34545);
-	printf ("\033[32;01m%-O\033[00m\n", 34545);
-	ft_printf ("%-O\n", 34545);
-	printf ("\033[32;01m%#0O\033[00m\n", 34545);
-	ft_printf ("%#0O\n", 34545);
-	printf ("\033[32;01m%#-O\033[00m\n", 34545);
-	ft_printf ("%#-O\n\n", 34545);
-
-	printf("--- TEST  %%O negatif avec attributs ---\n\n");
-
-	printf ("\033[32;01m%#O\033[00m\n", -34545);
-	ft_printf ("%#O\n", -34545);
-	printf ("\033[32;01m%0O\033[00m\n", -34545);
-	ft_printf ("%0O\n", -34545);
-	printf ("\033[32;01m%-O\033[00m\n", -34545);
-	ft_printf ("%-O\n", -34545);
-	printf ("\033[32;01m%#0O\033[00m\n", -34545);
-	ft_printf ("%#0O\n", -34545);
-	printf ("\033[32;01m%#-O\033[00m\n", -34545);
-	ft_printf ("%#-O\n\n", -34545);
-
-	printf("--- TEST  %%O pOsitif avec largeur ---\n\n");
-
-	printf ("\033[32;01m%34O\033[00m\n", 34545);
-	ft_printf ("%34O\n", 34545);
-	printf ("\033[32;01m%#34O\033[00m\n", 34545);
-	ft_printf ("%#34O\n", 34545);
-	printf ("\033[32;01m%034O\033[00m\n", 34545);
-	ft_printf ("%034O\n", 34545);
-	printf ("\033[32;01m%-34O\033[00m\n", 34545);
-	ft_printf ("%-34O\n", 34545);
-	printf ("\033[32;01m%#034O\033[00m\n", 34545);
-	ft_printf ("%#034O\n", 34545);
-	printf ("\033[32;01m%#-34O\033[00m\n", 34545);
-	ft_printf ("%#-34O\n\n", 34545);
-
-	printf("--- TEST  %%O negatif avec largeur ---\n\n");
-
-	printf ("\033[32;01m%34O\033[00m\n", -34545);
-	ft_printf ("%34O\n", -34545);
-	printf ("\033[32;01m%#34O\033[00m\n", -34545);
-	ft_printf ("%#34O\n", -34545);
-	printf ("\033[32;01m%034O\033[00m\n", -34545);
-	ft_printf ("%034O\n", -34545);
-	printf ("\033[32;01m%-34O\033[00m\n", -34545);
-	ft_printf ("%-34O\n", -34545);
-	printf ("\033[32;01m%#034O\033[00m\n", -34545);
-	ft_printf ("%#034O\n", -34545);
-	printf ("\033[32;01m%#-34O\033[00m\n", -34545);
-	ft_printf ("%#-34O\n\n", -34545);
-
-	printf("--- TEST  %%O pOsitif avec mOdificateurs ---\n\n");
-	
-	printf ("\033[32;01m%lO\033[00m\n", ul);
-	ft_printf ("%lO\n", ul);
-	printf ("\033[32;01m%llO\033[00m\n", ull);
-	ft_printf ("%llO\n", ull);
-	printf ("\033[32;01m%hO\033[00m\n", us);
-	ft_printf ("%hO\n", us);
-	printf ("\033[32;01m%hhO\033[00m\n", uc);
-	ft_printf ("%hhO\n", uc);
-	printf ("\033[32;01m%jO\033[00m\n", umax);
-	ft_printf ("%jO\n", umax);
-	printf ("\033[32;01m%zO\033[00m\n", size);
-	ft_printf ("%zO\n", size);
-	printf("--- TEST CONVERSION %%u ---\n\n");
+//	printf("--- TEST CONVERSION %%O ---\n\n");
+//
+//	printf("--- TEST  %%O positif ---\n\n");
+//
+//	printf ("\033[32;01m%O\033[00m\n", 34545);
+//	ft_printf ("%O\n\n", 34545);
+//
+//	printf("--- TEST  %%O negatif ---\n\n");
+//
+//	printf ("\033[32;01m%O\033[00m\n", -34545);
+//	ft_printf ("%O\n\n", -34545);
+//
+//	printf("--- TEST  %%O positif avec attributs ---\n\n");
+//
+//	printf ("\033[32;01m%#O\033[00m\n", 34545);
+//	ft_printf ("%#O\n", 34545);
+//	printf ("\033[32;01m%0O\033[00m\n", 34545);
+//	ft_printf ("%0O\n", 34545);
+//	printf ("\033[32;01m%-O\033[00m\n", 34545);
+//	ft_printf ("%-O\n", 34545);
+//	printf ("\033[32;01m%#0O\033[00m\n", 34545);
+//	ft_printf ("%#0O\n", 34545);
+//	printf ("\033[32;01m%#-O\033[00m\n", 34545);
+//	ft_printf ("%#-O\n\n", 34545);
+//
+//	printf("--- TEST  %%O negatif avec attributs ---\n\n");
+//
+//	printf ("\033[32;01m%#O\033[00m\n", -34545);
+//	ft_printf ("%#O\n", -34545);
+//	printf ("\033[32;01m%0O\033[00m\n", -34545);
+//	ft_printf ("%0O\n", -34545);
+//	printf ("\033[32;01m%-O\033[00m\n", -34545);
+//	ft_printf ("%-O\n", -34545);
+//	printf ("\033[32;01m%#0O\033[00m\n", -34545);
+//	ft_printf ("%#0O\n", -34545);
+//	printf ("\033[32;01m%#-O\033[00m\n", -34545);
+//	ft_printf ("%#-O\n\n", -34545);
+//
+//	printf("--- TEST  %%O positif avec largeur ---\n\n");
+//
+//	printf ("\033[32;01m%34O\033[00m\n", 34545);
+//	ft_printf ("%34O\n", 34545);
+//	printf ("\033[32;01m%#34O\033[00m\n", 34545);
+//	ft_printf ("%#34O\n", 34545);
+//	printf ("\033[32;01m%034O\033[00m\n", 34545);
+//	ft_printf ("%034O\n", 34545);
+//	printf ("\033[32;01m%-34O\033[00m\n", 34545);
+//	ft_printf ("%-34O\n", 34545);
+//	printf ("\033[32;01m%#034O\033[00m\n", 34545);
+//	ft_printf ("%#034O\n", 34545);
+//	printf ("\033[32;01m%#-34O\033[00m\n", 34545);
+//	ft_printf ("%#-34O\n\n", 34545);
+//
+//	printf("--- TEST  %%O negatif avec largeur ---\n\n");
+//
+//	printf ("\033[32;01m%34O\033[00m\n", -34545);
+//	ft_printf ("%34O\n", -34545);
+//	printf ("\033[32;01m%#34O\033[00m\n", -34545);
+//	ft_printf ("%#34O\n", -34545);
+//	printf ("\033[32;01m%034O\033[00m\n", -34545);
+//	ft_printf ("%034O\n", -34545);
+//	printf ("\033[32;01m%-34O\033[00m\n", -34545);
+//	ft_printf ("%-34O\n", -34545);
+//	printf ("\033[32;01m%#034O\033[00m\n", -34545);
+//	ft_printf ("%#034O\n", -34545);
+//	printf ("\033[32;01m%#-34O\033[00m\n", -34545);
+//	ft_printf ("%#-34O\n\n", -34545);
+//
+//	printf("--- TEST  %%O positif avec modificateurs ---\n\n");
+//	
+//	printf ("\033[32;01m%lO\033[00m\n", ul);
+//	ft_printf ("%lO\n", ul);
+//	printf ("\033[32;01m%llO\033[00m\n", ull);
+//	ft_printf ("%llO\n", ull);
+//	printf ("\033[32;01m%hO\033[00m\n", us);
+//	ft_printf ("%hO\n", us);
+//	printf ("\033[32;01m%hhO\033[00m\n", uc);
+//	ft_printf ("%hhO\n", uc);
+//	printf ("\033[32;01m%jO\033[00m\n", umax);
+//	ft_printf ("%jO\n", umax);
+//	printf ("\033[32;01m%zO\033[00m\n", size);
+//	ft_printf ("%zO\n", size);
+//	printf("--- TEST CONVERSION %%u ---\n\n");
 
 //	printf("--- TEST  %%u positif ---\n\n");
 //
@@ -719,27 +719,27 @@ int			main()
 //	printf ("\033[32;01m%- d\033[00m\n", -12);
 //	ft_printf ("%- d\n\n", -12);
 //
-//	printf("--- TEST %%d positif avec largeur ---\n\n");
-//
-//	printf ("\033[32;01m%12d\033[00m\n", 12);
-//	ft_printf ("%12d\n", 12);
-//	printf ("\033[32;01m%012d\033[00m\n", 12);
-//	ft_printf ("%012d\n", 12);
-//	printf ("\033[32;01m%-12d\033[00m\n", 12);
-//	ft_printf ("%-12d\n", 12);
-//	printf ("\033[32;01m%+12d\033[00m\n", 12);
-//	ft_printf ("%+12d\n", 12);
-//	printf ("\033[32;01m% 12d\033[00m\n", 12);
-//	ft_printf ("% 12d\n", 12);
-//	printf ("\033[32;01m%0+12d\033[00m\n", 12);
-//	ft_printf ("%0+12d\n", 12);
-//	printf ("\033[32;01m%0 12d\033[00m\n", 12);
-//	ft_printf ("%0 12d\n", 12);
-//	printf ("\033[32;01m%-+12d\033[00m\n", 12);
-//	ft_printf ("%-+12d\n", 12);
-//	printf ("\033[32;01m%- 12d\033[00m\n", 12);
-//	ft_printf ("%- 12d\n\n", 12);
-//
+	printf("--- TEST %%d positif avec largeur ---\n\n");
+
+	printf ("\033[32;01m%12d\033[00m\n", 12);
+	ft_printf ("%12d\n", 12);
+	printf ("\033[32;01m%012d\033[00m\n", 12);
+	ft_printf ("%012d\n", 12);
+	printf ("\033[32;01m%-12d\033[00m\n", 12);
+	ft_printf ("%-12d\n", 12);
+	printf ("\033[32;01m%+12d\033[00m\n", 12);
+	ft_printf ("%+12d\n", 12);
+	printf ("\033[32;01m% 12d\033[00m\n", 12);
+	ft_printf ("% 12d\n", 12);
+	printf ("\033[32;01m%0+12d\033[00m\n", 12);
+	ft_printf ("%0+12d\n", 12);
+	printf ("\033[32;01m%0 12d\033[00m\n", 12);
+	ft_printf ("%0 12d\n", 12);
+	printf ("\033[32;01m%-+12d\033[00m\n", 12);
+	ft_printf ("%-+12d\n", 12);
+	printf ("\033[32;01m%- 12d\033[00m\n", 12);
+	ft_printf ("%- 12d\n\n", 12);
+
 //	printf("--- TEST %%d negatif avec largeur ---\n\n");
 //
 //	printf ("\033[32;01m%12d\033[00m\n", -12);
@@ -1865,6 +1865,165 @@ int			main()
 //	printf ("\033[32;01m%- 12.5zd\033[00m\n", l);
 //	ft_printf ("%- 12.5zd\n\n", l);
 //	
+	printf("--- TEST CONVERSION %%i ---\n\n");
+	printf("--- TEST %%i positif ---\n\n");
+	
+	printf ("\033[32;01m%i\033[00m\n", 12);
+	ft_printf ("%i\n\n", 12);
+
+	printf("--- TEST %%i negatif ---\n\n");
+
+	printf ("\033[32;01m%i\033[00m\n", -12);
+	ft_printf ("%i\n\n", -12);
+	
+	printf("--- TEST %%i positif avec attributs ---\n\n");
+
+	printf ("\033[32;01m%0i\033[00m\n", 12);
+	ft_printf ("%0i\n", 12);
+	printf ("\033[32;01m%-i\033[00m\n", 12);
+	ft_printf ("%-i\n", 12);
+	printf ("\033[32;01m%+i\033[00m\n", 12);
+	ft_printf ("%+i\n", 12);
+	printf ("\033[32;01m% i\033[00m\n", 12);
+	ft_printf ("% i\n", 12);
+	printf ("\033[32;01m%0+i\033[00m\n", 12);
+	ft_printf ("%0+i\n", 12);
+	printf ("\033[32;01m%0 i\033[00m\n", 12);
+	ft_printf ("%0 i\n", 12);
+	printf ("\033[32;01m%-+i\033[00m\n", 12);
+	ft_printf ("%-+i\n", 12);
+	printf ("\033[32;01m%- i\033[00m\n", 12);
+	ft_printf ("%- i\n\n", 12);
+
+
+	printf("--- TEST %%i negatif avec attributs ---\n\n");
+
+	printf ("\033[32;01m%0i\033[00m\n", -12);
+	ft_printf ("%0i\n", -12);
+	printf ("\033[32;01m%-i\033[00m\n", -12);
+	ft_printf ("%-i\n", -12);
+	printf ("\033[32;01m%+i\033[00m\n", -12);
+	ft_printf ("%+i\n", -12);
+	printf ("\033[32;01m% i\033[00m\n", -12);
+	ft_printf ("% i\n", -12);
+	printf ("\033[32;01m%0+i\033[00m\n", -12);
+	ft_printf ("%0+i\n", -12);
+	printf ("\033[32;01m%0 i\033[00m\n", -12);
+	ft_printf ("%0 i\n", -12);
+	printf ("\033[32;01m%-+i\033[00m\n", -12);
+	ft_printf ("%-+i\n", -12);
+	printf ("\033[32;01m%- i\033[00m\n", -12);
+	ft_printf ("%- i\n\n", -12);
+
+	printf("--- TEST %%i positif avec largeur ---\n\n");
+
+	printf ("\033[32;01m%12i\033[00m\n", 12);
+	ft_printf ("%12i\n", 12);
+	printf ("\033[32;01m%012i\033[00m\n", 12);
+	ft_printf ("%012i\n", 12);
+	printf ("\033[32;01m%-12i\033[00m\n", 12);
+	ft_printf ("%-12i\n", 12);
+	printf ("\033[32;01m%+12i\033[00m\n", 12);
+	ft_printf ("%+12i\n", 12);
+	printf ("\033[32;01m% 12i\033[00m\n", 12);
+	ft_printf ("% 12i\n", 12);
+	printf ("\033[32;01m%0+12i\033[00m\n", 12);
+	ft_printf ("%0+12i\n", 12);
+	printf ("\033[32;01m%0 12i\033[00m\n", 12);
+	ft_printf ("%0 12i\n", 12);
+	printf ("\033[32;01m%-+12i\033[00m\n", 12);
+	ft_printf ("%-+12i\n", 12);
+	printf ("\033[32;01m%- 12i\033[00m\n", 12);
+	ft_printf ("%- 12i\n\n", 12);
+
+	printf("--- TEST %%i negatif avec largeur ---\n\n");
+
+	printf ("\033[32;01m%12i\033[00m\n", -12);
+	ft_printf ("%12i\n", -12);
+	printf ("\033[32;01m%012i\033[00m\n", -12);
+	ft_printf ("%012i\n", -12);
+	printf ("\033[32;01m%-12i\033[00m\n", -12);
+	ft_printf ("%-12i\n", -12);
+	printf ("\033[32;01m%+12i\033[00m\n", -12);
+	ft_printf ("%+12i\n", -12);
+	printf ("\033[32;01m% 12i\033[00m\n", -12);
+	ft_printf ("% 12i\n", -12);
+	printf ("\033[32;01m%0+12i\033[00m\n", -12);
+	ft_printf ("%0+12i\n", -12);
+	printf ("\033[32;01m%0 12i\033[00m\n", -12);
+	ft_printf ("%0 12i\n", -12);
+	printf ("\033[32;01m%-+12i\033[00m\n", -12);
+	ft_printf ("%-+12i\n", -12);
+	printf ("\033[32;01m%- 12i\033[00m\n", -12);
+	ft_printf ("%- 12i\n\n", -12);
+
+	printf("--- TEST %%i positif avec precision ---\n\n");
+
+	printf ("\033[32;01m%.5i\033[00m\n", 1288888);
+	ft_printf ("%.5i\n", 1288888);
+	printf ("\033[32;01m%.5i\033[00m\n", 12);
+	ft_printf ("%.5i\n", 12);
+	printf ("\033[32;01m%0.5i\033[00m\n", 137);
+	ft_printf ("%0.5i\n", 137);
+	printf ("\033[32;01m%-.5i\033[00m\n", 137);
+	ft_printf ("%-.5i\n", 137);
+	printf ("\033[32;01m%+.5i\033[00m\n", 137);
+	ft_printf ("%+.5i\n", 137);
+	printf ("\033[32;01m% .5i\033[00m\n", 137);
+	ft_printf ("% .5i\n", 137);
+	printf ("\033[32;01m%12.5i\033[00m\n", 137);
+	ft_printf ("%12.5i\n", 137);
+	printf ("\033[32;01m%012.5i\033[00m\n", 137);
+	ft_printf ("%012.5i\n", 137);
+	printf ("\033[32;01m%-12.5i\033[00m\n", 137);
+	ft_printf ("%-12.5i\n", 137);
+	printf ("\033[32;01m%+12.5i\033[00m\n", 137);
+	ft_printf ("%+12.5i\n", 137);
+	printf ("\033[32;01m% 12.5i\033[00m\n", 137);
+	ft_printf ("% 12.5i\n", 137);
+	printf ("\033[32;01m%0+12.5i\033[00m\n", 137);
+	ft_printf ("%0+12.5i\n", 137);
+	printf ("\033[32;01m%0 12.5i\033[00m\n", 137);
+	ft_printf ("%0 12.5i\n", 137);
+	printf ("\033[32;01m%- 12.5i\033[00m\n", 137);
+	ft_printf ("%-+12.5i\n", 137);
+	printf ("\033[32;01m%- 12.5i\033[00m\n", 137);
+	ft_printf ("%- 12.5i\n\n", 137);
+
+
+	printf("--- TEST %%i negatif avec precision ---\n\n");
+
+	printf ("\033[32;01m%.5i\033[00m\n", -1288888);
+	ft_printf ("%.5i\n", -1288888);
+	printf ("\033[32;01m%.5i\033[00m\n", -12);
+	ft_printf ("%.5i\n", -12);
+	printf ("\033[32;01m%0.5i\033[00m\n", -12);
+	ft_printf ("%0.5i\n", -12);
+	printf ("\033[32;01m%-.5i\033[00m\n", -12);
+	ft_printf ("%-.5i\n", -12);
+	printf ("\033[32;01m%+.5i\033[00m\n", -12);
+	ft_printf ("%+.5i\n", -12);
+	printf ("\033[32;01m% .5i\033[00m\n", -12);
+	ft_printf ("% .5i\n", -12);
+	printf ("\033[32;01m%12.5i\033[00m\n", -12);
+	ft_printf ("%12.5i\n", -12);
+	printf ("\033[32;01m%012.5i\033[00m\n", -12);
+	ft_printf ("%012.5i\n", -12);
+	printf ("\033[32;01m%-12.5i\033[00m\n", -12);
+	ft_printf ("%-12.5i\n", -12);
+	printf ("\033[32;01m%+12.5i\033[00m\n", -12);
+	ft_printf ("%+12.5i\n", -12);
+	printf ("\033[32;01m% 12.5i\033[00m\n", -12);
+	ft_printf ("% 12.5i\n", -12);
+	printf ("\033[32;01m%0+12.5i\033[00m\n", -12);
+	ft_printf ("%0+12.5i\n", -12);
+	printf ("\033[32;01m%0 12.5i\033[00m\n", -12);
+	ft_printf ("%0 12.5i\n", -12);
+	printf ("\033[32;01m%- 12.5i\033[00m\n", -12);
+	ft_printf ("%-+12.5i\n", -12);
+	printf ("\033[32;01m%- 12.5i\033[00m\n", -12);
+	ft_printf ("%- 12.5i\n\n", -12);
+
 	return (0);
 
 }

@@ -11,7 +11,6 @@ char		*ajout_zeros(char *nouvelle, char *chaine, int lon, int precision)
 	diff = precision - lon + signe;
 	i = (chaine[0] == '-' || chaine[0] == '+' || chaine[0] == ' ') ? 1 : 0;
 	j = (chaine[0] == '-' || chaine[0] == '+' || chaine[0] == ' ') ? 1 : 0;
-//	printf("chaine = %s, lon = %d, signe = %d, precision = %d, diff = %d\n", chaine, lon, signe, precision, diff);
 	while (i < diff + signe)
 		nouvelle[i++] = '0';
 	while (i <= precision)

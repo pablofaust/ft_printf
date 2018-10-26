@@ -34,6 +34,8 @@ int			ecrit_int(t_maillon **maillon)
 
 	largeur = ((*maillon)->largeur) ? ft_atoi((*maillon)->largeur) : 0;
 	initial = ft_strlen((*maillon)->chaine);
+	if ((*maillon)->chaine[0] == '-')
+		(*maillon)->neg = 1;
 	precision = ((*maillon)->precision) ? ft_atoi((*maillon)->precision) : 0;
 	if ((*maillon)->att_hash)
 		((*maillon)->chaine = modif_hash(maillon, (*maillon)->conversion));

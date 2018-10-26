@@ -18,9 +18,8 @@ char		*largeur_zeros(t_maillon **maillon, char *nouvelle, int largeur)
 	return (nouvelle);
 }
 
-char		*largeur_av(t_maillon **maillon, char *nouvelle, int largeur, int initial)
+char		*largeur_av(t_maillon **maillon, char *nouvelle, int precision, int initial)
 {
-	char	*chaine;
 	int		i;
 	int		j;
 	int		add;
@@ -30,15 +29,18 @@ char		*largeur_av(t_maillon **maillon, char *nouvelle, int largeur, int initial)
 	add = 0;
 	if ((c == 'o' || c == 'O') && (*maillon)->att_hash)
 		add = 1;
+	else if ((c == 'd' || c == 'i') && ((*maillon)->att_plus || (*maillon)->att_espace) && (*maillon)->chaine[0] != '-')
+		add = 1;
 	else if ((c == 'x' || c == 'X') && (*maillon)->att_hash)
 		add = 2;
-	chaine = (*maillon)->chaine;
 	i = 0;
-	while (i < largeur - initial - add)
+	if (precision > initial + (*maillon)->neg)
+		precision = precision - initial + (*maillon)->neg;
+	while (i < ft_atoi((*maillon)->largeur) - initial - add - precision)
 		nouvelle[i++] = ' ';
 	j = 0;
-	while (chaine[j])
-		nouvelle[i++] = chaine[j++]; 
+	while ((*maillon)->chaine[j])
+		nouvelle[i++] = (*maillon)->chaine[j++]; 
 	return (nouvelle);
 }
 
@@ -59,7 +61,9 @@ char		*largeur_apr(t_maillon **maillon, char *nouvelle, int largeur)
 char		*gestion_largeur(t_maillon **maillon, int largeur, int initial)
 {
 	char	*nouvelle;
+	int	precision;
 
+	precision = ((*maillon)->precision != NULL) ? ft_atoi((*maillon)->precision) : 0;
 	if (!(nouvelle = ft_strnew(largeur)))
 		return ((*maillon)->chaine);
 	if ((*maillon)->att_moins)
@@ -69,7 +73,7 @@ char		*gestion_largeur(t_maillon **maillon, int largeur, int initial)
 		if ((*maillon)->att_zero && (*maillon)->precision == NULL)
 			nouvelle = largeur_zeros(maillon, nouvelle, largeur);
 		else
-			nouvelle = largeur_av(maillon, nouvelle, largeur, initial);
+			nouvelle = largeur_av(maillon, nouvelle, precision, initial);
 	}
 //	free((*maillon)->chaine);
 	return (nouvelle);

@@ -25,26 +25,16 @@ int		conversion_char(va_list ap, t_maillon **maillon)
 
 	chaine = NULL;
 	modif = ((*maillon)->modificateur ) ? trans_modif((*maillon)->modificateur) : '0';
-	if ((*maillon)->conversion == 's' && modif != 'l')
+	if (modif == 'l')
+		return (conversion_wchar(maillon, ap);
+	else if ((*maillon)->conversion == 's' && modif != 'l')
 		chaine = va_arg(ap, char*);
-	if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')
+	else if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')
 	{
 		c = va_arg(ap, int);
 		chaine = ft_strnew(1);
 		chaine[0] = c;
 	}
-//	printf("%s\n", chaine);
-//	if ((*maillon)->conversion == 'S')
-//	{
-//		wchar_t		*sw;
-//
-//		sw = va_arg(ap, wchar_t *);
-//		while (*sw)
-//		{
-//			printf("%s\n", ft_itoa_base_ll(*sw, 2));
-//			sw++;
-//		}
-//	}
 	(*maillon)->chaine = chaine; 
 	return (ecrit_char(maillon));
 }

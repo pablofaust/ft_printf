@@ -73,7 +73,10 @@ int			conversion_uint(va_list ap, t_maillon **maillon)
 
 	chaine = NULL;
 	base = connaitre_base((*maillon)->conversion);
-	chaine = ft_itoa_base_uint(va_arg(ap, unsigned int), base);
+	if ((*maillon)->conversion == 'X')
+		chaine = ft_itoa_base_uint(va_arg(ap, unsigned int), base, 'A');
+	else
+		chaine = ft_itoa_base_uint(va_arg(ap, unsigned int), base, 'a');
 	(*maillon)->chaine = chaine;
 	return (ecrit_int(maillon));
 }

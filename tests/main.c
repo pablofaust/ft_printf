@@ -398,22 +398,106 @@ int			main()
 //	printf ("\033[32;01m%#-34x\033[00m\n", -34545);
 //	ft_printf ("%#-34x\n\n", -34545);
 
-	printf("--- TEST  %%x positif avec modificateurs ---\n\n");
+//	printf("--- TEST  %%x positif avec modificateurs ---\n\n");
 
-	printf ("\033[32;01m%lx\033[00m\n", ul);
-	ft_printf ("%lx\n", ul);
-	printf ("\033[32;01m%llx\033[00m\n", ull);
-	ft_printf ("%llx\n", ull);
-	printf ("\033[32;01m%hx\033[00m\n", us);
-	ft_printf ("%hx\n", us);
-	printf ("\033[32;01m%hhx\033[00m\n", uc);
-	ft_printf ("%hhx\n", uc);
-	printf ("\033[32;01m%jx\033[00m\n", umax);
-	ft_printf ("%jx\n", umax);
-	printf ("\033[32;01m%zx\033[00m\n", size);
-	ft_printf ("%zx\n\n", size);
-	printf("--- TEST %%ls ---\n\n");
+//	printf ("\033[32;01m%lx\033[00m\n", ul);
+//	ft_printf ("%lx\n", ul);
+//	printf ("\033[32;01m%llx\033[00m\n", ull);
+//	ft_printf ("%llx\n", ull);
+//	printf ("\033[32;01m%hx\033[00m\n", us);
+//	ft_printf ("%hx\n", us);
+//	printf ("\033[32;01m%hhx\033[00m\n", uc);
+//	ft_printf ("%hhx\n", uc);
+//	printf ("\033[32;01m%jx\033[00m\n", umax);
+//	ft_printf ("%jx\n", umax);
+//	printf ("\033[32;01m%zx\033[00m\n", size);
+//	ft_printf ("%zx\n\n", size);
+//	printf("--- TEST %%ls ---\n\n");
  	
+//	printf("--- TEST CONVERSION %%X ---\n\n");
+//
+//	printf("--- TEST  %%X positif ---\n\n");
+//
+//	printf ("\033[32;01m%X\033[00m\n", 34545);
+//	ft_printf ("%X\n\n", 34545);
+//
+//	printf("--- TEST  %%X negatif ---\n\n");
+//
+//	printf ("\033[32;01m%X\033[00m\n", -34545);
+//	ft_printf ("%X\n\n", -34545);
+//
+//	printf("--- TEST  %%X positif avec attributs ---\n\n");
+//
+//	printf ("\033[32;01m%#X\033[00m\n", 34545);
+//	ft_printf ("%#X\n", 34545);
+//	printf ("\033[32;01m%0X\033[00m\n", 34545);
+//	ft_printf ("%0X\n", 34545);
+//	printf ("\033[32;01m%-X\033[00m\n", 34545);
+//	ft_printf ("%-X\n", 34545);
+//	printf ("\033[32;01m%#0X\033[00m\n", 34545);
+//	ft_printf ("%#0X\n", 34545);
+//	printf ("\033[32;01m%#-X\033[00m\n", 34545);
+//	ft_printf ("%#-X\n\n", 34545);
+//
+//	printf("--- TEST  %%X negatif avec attributs ---\n\n");
+//
+//	printf ("\033[32;01m%#X\033[00m\n", -34545);
+//	ft_printf ("%#X\n", -34545);
+//	printf ("\033[32;01m%0X\033[00m\n", -34545);
+//	ft_printf ("%0X\n", -34545);
+//	printf ("\033[32;01m%-X\033[00m\n", -34545);
+//	ft_printf ("%-X\n", -34545);
+//	printf ("\033[32;01m%#0X\033[00m\n", -34545);
+//	ft_printf ("%#0X\n", -34545);
+//	printf ("\033[32;01m%#-X\033[00m\n", -34545);
+//	ft_printf ("%#-X\n\n", -34545);
+//
+//	printf("--- TEST  %%X positif avec largeur ---\n\n");
+//
+//	printf ("\033[32;01m%34X\033[00m\n", 34545);
+//	ft_printf ("%34X\n", 34545);
+//	printf ("\033[32;01m%#34X\033[00m\n", 34545);
+//	ft_printf ("%#34X\n", 34545);
+//	printf ("\033[32;01m%034X\033[00m\n", 34545);
+//	ft_printf ("%034X\n", 34545);
+//	printf ("\033[32;01m%-34X\033[00m\n", 34545);
+//	ft_printf ("%-34X\n", 34545);
+//	printf ("\033[32;01m%#034X\033[00m\n", 34545);
+//	ft_printf ("%#034X\n", 34545);
+//	printf ("\033[32;01m%#-34X\033[00m\n", 34545);
+//	ft_printf ("%#-34X\n\n", 34545);
+//
+//	printf("--- TEST  %%X negatif avec largeur ---\n\n");
+//
+//	printf ("\033[32;01m%34X\033[00m\n", -34545);
+//	ft_printf ("%34X\n", -34545);
+//	printf ("\033[32;01m%#34X\033[00m\n", -34545);
+//	ft_printf ("%#34X\n", -34545);
+//	printf ("\033[32;01m%034X\033[00m\n", -34545);
+//	ft_printf ("%034X\n", -34545);
+//	printf ("\033[32;01m%-34X\033[00m\n", -34545);
+//	ft_printf ("%-34X\n", -34545);
+//	printf ("\033[32;01m%#034X\033[00m\n", -34545);
+//	ft_printf ("%#034X\n", -34545);
+//	printf ("\033[32;01m%#-34X\033[00m\n", -34545);
+//	ft_printf ("%#-34X\n\n", -34545);
+//
+//	printf("--- TEST  %%X positif avec modificateurs ---\n\n");
+//
+//	printf ("\033[32;01m%lX\033[00m\n", ul);
+//	ft_printf ("%lX\n", ul);
+//	printf ("\033[32;01m%llX\033[00m\n", ull);
+//	ft_printf ("%llX\n", ull);
+//	printf ("\033[32;01m%hX\033[00m\n", us);
+//	ft_printf ("%hX\n", us);
+//	printf ("\033[32;01m%hhX\033[00m\n", uc);
+//	ft_printf ("%hhX\n", uc);
+//	printf ("\033[32;01m%jX\033[00m\n", umax);
+//	ft_printf ("%jX\n", umax);
+//	printf ("\033[32;01m%zX\033[00m\n", size);
+//	ft_printf ("%zX\n\n", size);
+//	printf("--- TEST %%ls ---\n\n");
+
 //	setlocale(LC_ALL, "en_US.UTF-8"); 
 
 //	printf ("\033[32;01m%ls\033[00m\n", L"Ѡ");

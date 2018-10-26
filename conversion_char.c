@@ -27,7 +27,7 @@ int		conversion_char(va_list ap, t_maillon **maillon)
 	modif = ((*maillon)->modificateur ) ? trans_modif((*maillon)->modificateur) : '0';
 	if ((*maillon)->conversion == 's' && modif != 'l')
 		chaine = va_arg(ap, char*);
-	if ((*maillon)->conversion == 'c')
+	if ((*maillon)->conversion == 'c' || (*maillon)->conversion == 'C')
 	{
 		c = va_arg(ap, int);
 		chaine = ft_strnew(1);

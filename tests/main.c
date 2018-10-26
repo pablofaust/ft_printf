@@ -150,6 +150,32 @@ int			main()
 //	printf ("\033[32;01m%-12lc\033[00m\n", 'a');
 //	ft_printf ("%-12lc\n", 'a');
 
+	printf("--- TEST CONVERSION %%C ---\n\n");
+	printf("--- TEST  %%C simple ---\n\n");
+
+	printf ("\033[32;01m%C\033[00m\n", 'a');
+	ft_printf ("%C\n", 'a');
+	printf ("\033[32;01m%C\033[00m\n", ' ');
+	ft_printf ("%C\n", ' ');
+	printf ("\033[32;01m%C\033[00m\n", '\n');
+	ft_printf ("%C\n", '\n');
+	printf ("\033[32;01m%C\033[00m\n", '\0');
+	ft_printf ("%C\n\n", '\0');
+
+	printf("--- TEST  %%C avec attributs ---\n\n");
+
+	printf ("\033[32;01m%-C\033[00m\n", 'a');
+	ft_printf ("%-C\n", 'a');
+	printf ("\033[32;01m%-C\033[00m\n", '\0');
+	ft_printf ("%-C\n\n", '\0');
+
+	printf("--- TEST  %%C avec largeur ---\n\n");
+
+	printf ("\033[32;01m%12C\033[00m\n", 'a');
+	ft_printf ("%12C\n", 'a');
+	printf ("\033[32;01m%-12C\033[00m\n", 'a');
+	ft_printf ("%-12C\n", 'a');
+
 //	printf("--- TEST CONVERSION %%p ---\n\n");
 //	printf("--- TEST  %%p ---\n\n");
 //
